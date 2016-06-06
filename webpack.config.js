@@ -1,17 +1,42 @@
-var browserSync=require('browser-sync-webpack-plugin');
-var path=require('path')
+var browserSync = require('browser-sync-webpack-plugin');
+var path = require('path');
+var babel = require('babel-core');
 module.exports =
     {
-        context:path.resolve(__dirname,'app'),
-        entry: './index.js',
+        context: path.resolve(__dirname, 'app'),
+        entry: './index',
         output:
         {
-            fileaname: './bundle.js',
-            path:path.resolve(__dirname,'dist'),
-            publicPath:'/asset/'
+            filename: 'bundle.js',
+            path: path.resolve(__dirname, 'dist'),
+            publicPath: '/asset/'
         },
-        
-          devtool: 'source-map',
+        resolve:
+        {
+            root: path.join(__dirname, './app'),
+            extensions: ['.js']
+        },
+        preprocessors: {
+            '**/*.js': file => babel.transform(file.content, { sourceMap: true })
+        },
+        devtool: 'source-map',
+        module: {
+            loaders: [
+                {
+
+                    test: /\.js$/,
+                    loader: 'babel',
+                    exclude: /node_modules/,
+                    include: [
+                        path.join(__dirname, "./app"),
+                    ]
+
+                }
+            ]
+        },
+        resolveLoader: {
+            modulesDirectories: ["node_modules"]
+        },
         plugins:
         [
             new browserSync({
