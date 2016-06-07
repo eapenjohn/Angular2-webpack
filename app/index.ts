@@ -3,12 +3,16 @@ import 'zone.js';
 import 'reflect-metadata';
 import {bootstrap} from 'angular2/platform/browser'
 import {Component} from 'angular2/core'
+import {DatasetTile}  from './components/datasetTile.Componenet'
+
+
 alert('hi')
 // console.log('from index js')
 
 @Component({
     selector: "app",
-    template: 'hiiiiiiiiiifdsafdhas'
+    directives:[DatasetTile],
+    template: 'hiiiiiiiiiifdsafdhas <dataset-tile></dataset-tile>'
 })
 class App {
 
