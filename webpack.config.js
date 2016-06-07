@@ -4,7 +4,7 @@ var babel = require('babel-core');
 module.exports =
     {
         context: path.resolve(__dirname, 'app'),
-        entry: './index',
+        entry: './index.ts',
         output:
         {
             filename: 'bundle.js',
@@ -14,7 +14,7 @@ module.exports =
         resolve:
         {
             root: path.join(__dirname, './app'),
-            extensions: ['.js']
+            extensions: ['','.ts','.js']
         },
         preprocessors: {
             '**/*.js': file => babel.transform(file.content, { sourceMap: true })
@@ -22,6 +22,10 @@ module.exports =
         devtool: 'source-map',
         module: {
             loaders: [
+                  {
+                    test: /\.ts(x?)$/,
+                    loader: 'ts'
+                },
                 {
 
                     test: /\.js$/,
