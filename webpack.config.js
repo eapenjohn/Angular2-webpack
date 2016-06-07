@@ -7,9 +7,8 @@ module.exports =
         entry: './index.ts',
         output:
         {
-            filename: 'bundle.js',
-            path: path.resolve(__dirname, 'dist'),
-            publicPath: '/asset/'
+            filename: './dist/bundle.js',
+            path: __dirname            
         },
         resolve:
         {
