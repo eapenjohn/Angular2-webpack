@@ -2,7 +2,7 @@ import {Component} from 'angular2/core'
 
 @Component({
     selector:'dataset-tile',
-    template:'<div>Dataset1</div> <input (click)="addToBasket()" type="button"/>'
+    template:"<div>Dataset1</div> <input type='text' #comment>  <input (click)='addToBasket(comment)' value='add to basket' type='button'/>"
 })
 
 export class DatasetTile
@@ -12,9 +12,9 @@ export class DatasetTile
         console.log('hi i am from datasettile')
     }
     
-    addToBasket()
+    addToBasket(comment)
     {
-        console.log('add to basket clciked');
+        console.log('add to basket clciked' , comment.value);
     }
     
     
