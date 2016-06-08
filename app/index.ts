@@ -6,9 +6,6 @@ import {Component} from 'angular2/core'
 import {DatasetTile}  from './components/datasetTile.Componenet'
 
 
-alert('hi')
-// console.log('from index js')
-
 @Component({
     selector: "app",
     directives:[DatasetTile],
