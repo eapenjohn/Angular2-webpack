@@ -3,6 +3,7 @@ import {Dataset} from '../models/dataset'
  @Injectable()
 export  class DatasetService
 {
+    datasets :Array<Dataset>=[];
     constructor()
     {
         var ss='';
@@ -11,7 +12,7 @@ export  class DatasetService
     
     get()
     {
-       var datasets :Array<Dataset>=[];
+      
        for(var i=0; i< 5; i++)
        {
            var dataset=new Dataset();
@@ -19,8 +20,16 @@ export  class DatasetService
            dataset.name='name '+i;
            dataset.supplierName='supplierName '+i;
            dataset.id='id '+i;
-          datasets.push(dataset);
+          this.datasets.push(dataset);
        }
-       return datasets;
+       return this.datasets;
     }
+
+    add(dataset:Dataset)
+    {
+        this.datasets.push(dataset);
+       
+    }
+
+
 }
