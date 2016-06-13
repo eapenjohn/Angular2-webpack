@@ -4,13 +4,16 @@ import {Dataset} from '../models/dataset'
 
 @Component({
     selector: 'create-dataset',
-    template: `
+    template: `    
+    <input type='text' [ngModel]='heading'/>
 <input type='text' [(ngModel)]='name'/>
 <input type="button"  value="Add Dataset" (click)='add()'/>`
 })
 
 export class CreateDataset {
-    name: string;
+
+    heading='Weclome to create Form'
+    name: string='john';
     constructor(private datasetService: DatasetService) {
 
     }
