@@ -4,6 +4,7 @@ export class Dataset implements IDataset
     description:string;
     supplierName:string;
     id:string;
+    hide:boolean=false;
 }
 
 export interface IDataset 
@@ -12,4 +13,5 @@ export interface IDataset
     description:string;
     supplierName:string;
     id:string;
+     hide:boolean;
 }

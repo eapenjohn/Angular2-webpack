@@ -4,7 +4,7 @@ import {DatasetService} from '../services/dataset.service'
 @Component({
     selector:'dataset-tile',
     template:`<div>Dataset1</div> 
-    <input type='text' #comment>  
+      <input type='text' #comment>
      <input (click)='addToBasket(comment)' value='add to basket' type='button'/>
      <input type='button' (mouseover)=mouseover($event,comment) value='mouseOver'/>
      `
