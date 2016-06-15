@@ -12,7 +12,7 @@ import {DatasetService} from './services/dataset.service'
     selector: "app",
     directives: [DatasetTile,DatasetListComponenet,CreateDataset],
     template: `
-      <h1>New Dataset</h1>
+      <h1 class='label'>New Dataset</h1>
       <create-dataset></create-dataset>
       <br/>
       <dataset-list></dataset-list>`

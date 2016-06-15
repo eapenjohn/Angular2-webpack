@@ -1,7 +1,8 @@
-import {Component, Input} from 'angular2/core'
+import {Component, Input,ViewEncapsulation} from 'angular2/core'
 import {DatasetService} from '../services/dataset.service'
 
 @Component({
+    encapsulation:ViewEncapsulation.Emulated,
     selector: 'dataset-tile',
     template: `
     <style>
