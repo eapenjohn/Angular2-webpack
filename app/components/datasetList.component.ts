@@ -1,16 +1,14 @@
 import {Component} from 'angular2/core'
 import {DatasetService} from '../services/dataset.service'
-
+import {DatasetTile} from './datasetTile.Componenet'
 @Component(
     {
         selector: 'dataset-list',
-        template: `datastetttttttt lissiis
+        directives:[DatasetTile],
+        template: `
+        datastetttttttt lissiis
         <ul>
-        <li *ngFor='#dataset of datasets' [hidden]='dataset.hide==true'>
-         Name {{dataset.name}}
-        Description {{dataset.hide}}
-        Hide the element {{dataset.hide}}
-        </li>
+          <dataset-tile *ngFor='let dataset of datasets' [hidden]='dataset.hide==true' [dataset]='dataset'></dataset-tile> 
         </ul>
      `
     }

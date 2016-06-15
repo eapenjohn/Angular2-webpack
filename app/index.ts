@@ -11,12 +11,11 @@ import {DatasetService} from './services/dataset.service'
 @Component({
     selector: "app",
     directives: [DatasetTile,DatasetListComponenet,CreateDataset],
-    template: `hiiiiiiiiiifdsafdhas <dataset-list></dataset-list>
-    
-    New Dataset
-   <create-dataset></create-dataset>
- 
-    `
+    template: `
+      <h1>New Dataset</h1>
+      <create-dataset></create-dataset>
+      <br/>
+      <dataset-list></dataset-list>`
 })
 class App {
 
