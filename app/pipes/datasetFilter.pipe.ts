@@ -10,6 +10,7 @@ export class DatasetFilterPipe
 {
     transform(input:Array<any>)
     {
-        return input.slice(1,2);
+        //return input.filter((item)=> item.name.length >0);
+        return input;
     }
 }

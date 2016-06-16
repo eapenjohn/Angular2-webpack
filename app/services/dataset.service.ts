@@ -13,7 +13,7 @@ export  class DatasetService
     get()
     {
       
-       for(var i=0; i< 5; i++)
+       for(var i=0; i< 2; i++)
        {
            var dataset=new Dataset();
            dataset.description='Des '+i;
@@ -27,7 +27,8 @@ export  class DatasetService
 
     add(dataset:Dataset)
     {
-        this.datasets.push(dataset);
+        this.datasets=[...this.datasets,dataset]
+       // this.datasets.push(dataset);
        
     }
 
