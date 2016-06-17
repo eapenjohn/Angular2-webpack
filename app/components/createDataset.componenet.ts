@@ -30,4 +30,4 @@ export class CreateDataset {
     }
 }
 
-CreateDataset.parameters = [DatasetService]
+CreateDataset['parameters'] = [DatasetService]

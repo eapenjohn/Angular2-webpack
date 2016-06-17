@@ -9,18 +9,19 @@ import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
         pipes:[DatasetFilterPipe],
         directives:[DatasetTile],
         template: `
-        datastetttttttt lissiis
         <ul>
-          <dataset-tile *ngFor='let dataset of datasets | datasetFilter' [hidden]='dataset.hide==true' [dataset]='dataset'></dataset-tile> 
+          <dataset-tile *ngFor='let dataset of datasets | datasetFilter' [hidden]='dataset.hide==true' [dataset]='dataset'
+           (datasetUpdateTrigger)='datasetService.update($event)'
+          ></dataset-tile> 
         </ul>
      `
     }
 )
 export class DatasetListComponenet {
     datasets;
-    constructor(datasetService: DatasetService) {
+    constructor(public datasetService: DatasetService) {
         this.datasets = datasetService.get();
     }
 }
 
-DatasetListComponenet.parameters = [DatasetService]
+DatasetListComponenet['parameters'] = [DatasetService]
