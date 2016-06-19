@@ -1,8 +1,9 @@
-import {Component, Input,ViewEncapsulation,Output,EventEmitter} from 'angular2/core'
+import {Component, Input,ViewEncapsulation,Output,EventEmitter} from '@angular/core'
 import {DatasetService} from '../services/dataset.service'
 
 
 @Component({
+    directives:[],
     encapsulation:ViewEncapsulation.Emulated,
     selector: 'dataset-tile',
     template: `
@@ -35,8 +36,8 @@ export class DatasetTile {
    @Input() dataset;
    @Output() datasetUpdateTrigger= new EventEmitter();
     constructor(datasetServive: DatasetService) {
-        datasetServive.get();
-        console.log('hi i am from datasettile')
+      //  datasetServive.get();
+      //  console.log('hi i am from datasettile')
     }
 
     addToBasket(comment) {

@@ -1,4 +1,4 @@
-import {Pipe} from 'angular2/core'
+import {Pipe} from '@angular/core'
 
 @Pipe(
     {
@@ -8,10 +8,11 @@ import {Pipe} from 'angular2/core'
 
 export class DatasetFilterPipe
 {
-    transform(input:Array<any>)
+    transform(input:Array<any>,selector)
     {
-        alert('s')
-        return input.filter((item)=> !item.hide);
+      //  alert('reached filter' +selector)
+        return input.filter((item)=> item.hide==selector);
        // return input;
     }
+
 }

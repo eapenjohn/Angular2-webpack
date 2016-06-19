@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core'
+import {Injectable} from '@angular/core'
 import {Dataset} from '../models/dataset'
 @Injectable()
 export class DatasetService {
@@ -19,15 +19,15 @@ export class DatasetService {
             dataset.hide=false;
             this.datasets.push(dataset);
         }
-        return this.datasets;
+      //  return this.datasets;
     }
 
     add(dataset: Dataset) {
-    // this.datasets=[...this.datasets,dataset]
-        this.datasets.push(dataset);
-        var temp = this.datasets;
-        this.datasets = [];
-        this.datasets = temp;
+     this.datasets=[...this.datasets,dataset]
+        // this.datasets.push(dataset);
+        // var temp = this.datasets;
+        // this.datasets = [];
+        // this.datasets = temp;
 
     }
 

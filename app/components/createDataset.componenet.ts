@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core'
+import {Component} from '@angular/core'
 import {DatasetService} from '../services/dataset.service'
 import {Dataset} from '../models/dataset'
 

@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core'
+import {Component,Input} from '@angular/core'
 import {DatasetService} from '../services/dataset.service'
 import {DatasetTile} from './datasetTile.Componenet'
 import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
@@ -10,7 +10,8 @@ import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
         directives:[DatasetTile],
         template: `
         <ul>
-          <dataset-tile *ngFor='let dataset of datasets | datasetFilter' [hidden]='dataset.hide==true' [dataset]='dataset'
+        selectionselection=={{selection}}
+          <dataset-tile *ngFor='let dataset of datasetService.datasets | datasetFilter : selection'  [dataset]='dataset'
            (datasetUpdateTrigger)='datasetService.update($event)'
           ></dataset-tile> 
         </ul>
@@ -18,9 +19,11 @@ import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
     }
 )
 export class DatasetListComponenet {
-    datasets;
+   
+    @Input() selection;
+    
     constructor(public datasetService: DatasetService) {
-        this.datasets = datasetService.get();
+        datasetService.get();
     }
 }
 
