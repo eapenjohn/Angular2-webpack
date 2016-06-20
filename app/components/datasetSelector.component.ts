@@ -3,7 +3,7 @@ import {Component,Output,EventEmitter} from '@angular/core'
 @Component({
     selector:'dataset-selector',
     template:`
-    <input type='checkbox' #select (change)='change(select)' value='Hide Datasets'/>
+   <input type='checkbox' #select (change)='change(select)' value='Hide Datasets'/>
     `
 })
 
