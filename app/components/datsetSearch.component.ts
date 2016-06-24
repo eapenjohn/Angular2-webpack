@@ -12,7 +12,6 @@ export default class DatasetSearch
     @Output() searchTerm=new EventEmitter();;
     ngOnInit()
     {
-        alert('ss')
     this.searchTerm.emit('');
     }
 }

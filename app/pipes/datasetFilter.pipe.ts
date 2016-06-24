@@ -9,10 +9,8 @@ import {Pipe} from '@angular/core'
 export class DatasetFilterPipe
 {
     transform(input:Array<any>,selector)
-    {
-      //  alert('reached filter' +selector)
-        return input.filter((item)=> item.hide==selector);
-       // return input;
+    {      
+        return input.filter((item)=> item.hide==selector);     
     }
 
 }

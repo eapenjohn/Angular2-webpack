@@ -8,9 +8,13 @@ import {DatasetListComponenet}  from './components/datasetList.component'
 import {CreateDataset}  from './components/createDataset.componenet'
 import {DatasetService} from './services/dataset.service'
 import {DatasetSelectorComponent} from './components/datasetSelector.component'
+
+import {routeProvider} from './routes'
+
+import {RouterConfig,provideRouter,ROUTER_DIRECTIVES} from '@angular/router'
 @Component({
     selector: "app",
-    directives: [DatasetTile,DatasetListComponenet,CreateDataset,DatasetSelectorComponent],
+    directives: [ROUTER_DIRECTIVES,DatasetTile,DatasetListComponenet,CreateDataset,DatasetSelectorComponent],
     template: `
       <h1 class='label'>New Dataset</h1>
       <create-dataset></create-dataset>
@@ -20,6 +24,8 @@ import {DatasetSelectorComponent} from './components/datasetSelector.component'
       <br/>
       <dataset-list [selection]='selection'></dataset-list>`
 })
+
+
 class App {
     selection=false
     constructor() {
@@ -31,5 +37,5 @@ class App {
      this.selection=$event;
      }
 }
-bootstrap(App, [DatasetService]);
+bootstrap(App, [routeProvider,DatasetService]);
 
