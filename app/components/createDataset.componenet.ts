@@ -1,8 +1,9 @@
 import {Component} from '@angular/core'
 import {DatasetService} from '../services/dataset.service'
 import {Dataset} from '../models/dataset'
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
+    directives:[ROUTER_DIRECTIVES],
     selector: 'create-dataset',
     template: `    
     <input type='text' [ngModel]='heading'/>

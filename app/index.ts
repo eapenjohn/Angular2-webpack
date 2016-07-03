@@ -1,5 +1,4 @@
-///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
-import 'zone.js';
+
 import 'reflect-metadata';
 import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
@@ -9,27 +8,22 @@ import {CreateDataset}  from './components/createDataset.componenet'
 import {DatasetService} from './services/dataset.service'
 import {DatasetSelectorComponent} from './components/datasetSelector.component'
 
-import {routeProvider} from './routes'
-
+import {APP_ROUTER_PROVIDERS} from './routes'
+import {} from '@angular/router-deprecated'
 import {RouterConfig,provideRouter,ROUTER_DIRECTIVES} from '@angular/router'
 @Component({
     selector: "app",
-    directives: [ROUTER_DIRECTIVES,DatasetTile,DatasetListComponenet,CreateDataset,DatasetSelectorComponent],
-    template: `
-      <h1 class='label'>New Dataset</h1>
-      <create-dataset></create-dataset>
-      <br/>
-    Hide/Show Datasets based on hide property
-      <dataset-selector (selector)='selectorChnage($event)'></dataset-selector>
-      <br/>
-      <dataset-list [selection]='selection'></dataset-list>`
+    directives: [ROUTER_DIRECTIVES],
+    template: `   <a [routerLink]="['/dataset-lists']">dataset-lists</a>
+    <router-outlet></router-outlet>
+    `
 })
 
 
-class App {
+export class App {
     selection=false
     constructor() {
-        console.log('hi i am from datasettile')
+       
     }
 
      selectorChnage($event)
@@ -37,5 +31,4 @@ class App {
      this.selection=$event;
      }
 }
-bootstrap(App, [routeProvider,DatasetService]);
-
+bootstrap(App, [APP_ROUTER_PROVIDERS,DatasetService]).catch(err => console.error(err));

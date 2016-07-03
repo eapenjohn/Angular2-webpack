@@ -1,9 +1,9 @@
 import {Component, Input,ViewEncapsulation,Output,EventEmitter} from '@angular/core'
 import {DatasetService} from '../services/dataset.service'
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-    directives:[],
+   directives:[ROUTER_DIRECTIVES],
     encapsulation:ViewEncapsulation.Emulated,
     selector: 'dataset-tile',
     template: `

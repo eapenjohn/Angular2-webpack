@@ -5,13 +5,13 @@ import DatasetSearch from './datsetSearch.component'
 
 import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
 import DatasetSearchPipe from '../pipes/datasetSearch.pipe'
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component(
     {
         selector: 'dataset-list',
         pipes:[DatasetFilterPipe,DatasetSearchPipe],
-        directives:[DatasetTile,DatasetSearch],
+        directives:[ROUTER_DIRECTIVES,DatasetTile,DatasetSearch],
         template: `
          <dataset-serach (searchTerm)='searchString=$event'></dataset-serach>
           <dataset-selector></dataset-selector>
@@ -20,6 +20,8 @@ import DatasetSearchPipe from '../pipes/datasetSearch.pipe'
            (datasetUpdateTrigger)='datasetService.update($event)'
           ></dataset-tile> 
         </ul>
+         <a [routerLink]="['/dataset-lists/create']">create</a>
+         <router-outlet></router-outlet>
      `
     }
 )

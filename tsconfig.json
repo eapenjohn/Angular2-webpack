@@ -18,5 +18,9 @@
         "typings/main",
         "reports"
     ],
-    "version": "1.8.10"
+    "version": "1.8.10",
+    "files": [
+        "node_modules/angular2/typings/browser.d.ts"
+
+    ]
 }

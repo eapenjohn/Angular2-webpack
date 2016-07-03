@@ -1,14 +1,30 @@
 
-import {RouterConfig,provideRouter,ROUTER_DIRECTIVES} from '@angular/router'
+import {RouterConfig, provideRouter, ROUTER_DIRECTIVES} from '@angular/router'
 import {DatasetListComponenet}  from './components/datasetList.component'
+import {CreateDataset} from './components/createDataset.componenet'
 
 
-const routes=[
+export const  routes: RouterConfig = [
     {
-        path:'datsetexplore',
-        name:'explore',
-        componenet:DatasetListComponenet
+        path: '',
+        redirectTo: 'dataset-lists',
+        pathMatch: 'full'
+    },
+    {
+        path: 'dataset-lists',
+        component: DatasetListComponenet,
+        children: [
+            {
+                path: 'create',
+                component: CreateDataset,
+            },
+            {
+                path:'',
+                 component: DatasetListComponenet
+            }
+        ]
+
     }
 ]
 
-export const routeProvider=[provideRouter(routes)]
+export const APP_ROUTER_PROVIDERS = [provideRouter(routes)]
