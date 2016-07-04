@@ -9,7 +9,6 @@ import {DatasetService} from './services/dataset.service'
 import {DatasetSelectorComponent} from './components/datasetSelector.component'
 
 import {APP_ROUTER_PROVIDERS} from './routes'
-import {} from '@angular/router-deprecated'
 import {RouterConfig,provideRouter,ROUTER_DIRECTIVES} from '@angular/router'
 @Component({
     selector: "app",

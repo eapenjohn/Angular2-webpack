@@ -7,6 +7,9 @@ import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
 import DatasetSearchPipe from '../pipes/datasetSearch.pipe'
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
+import 'bootstrap/dist/css/bootstrap.css'
+
+
 @Component(
     {
         selector: 'dataset-list',
@@ -20,7 +23,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
            (datasetUpdateTrigger)='datasetService.update($event)'
           ></dataset-tile> 
         </ul>
-         <a [routerLink]="['/dataset-lists/create']">create</a>
+      
          <router-outlet></router-outlet>
      `
     }

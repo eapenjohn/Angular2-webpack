@@ -5,6 +5,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     selector:'dataset-serach',
     template:`
      <h3>Search</h3> <input type='text' #search (input)='searchTerm.emit(search.value)'/>
+     <input type='button' class='btn btn-default' value='test'/>
     `
 })
 

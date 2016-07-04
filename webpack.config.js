@@ -8,12 +8,12 @@ module.exports =
         output:
         {
             filename: './dist/bundle.js',
-            path: __dirname            
+            path: __dirname
         },
         resolve:
         {
             root: path.join(__dirname, './app'),
-            extensions: ['','.ts','.js']
+            extensions: ['', '.ts', '.js']
         },
         preprocessors: {
             '**/*.js': file => babel.transform(file.content, { sourceMap: true })
@@ -21,7 +21,10 @@ module.exports =
         devtool: 'source-map',
         module: {
             loaders: [
-                  {
+                {
+                    test: /\.css$/, loader: 'style!css!'
+                },
+                {
                     test: /\.ts(x?)$/,
                     loader: 'ts'
                 },
@@ -33,7 +36,25 @@ module.exports =
                     include: [
                         path.join(__dirname, "./app"),
                     ]
-
+                },
+                {
+                    test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                    loader: 'file'
+                }, {
+                    test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                    loader: 'file'
+                }, {
+                    test: /\.jpg$/,
+                    exclude: /node_modules/,
+                    loader: 'file'
+                }, {
+                    test: /\.gif$/,
+                    exclude: /node_modules/,
+                    loader: 'file'
+                }, {
+                    test: /\.png$/,
+                    exclude: /node_modules/,
+                    loader: 'file'
                 }
             ]
         },
