@@ -7,7 +7,7 @@ import {DatasetFilterPipe} from '../pipes/datasetFilter.pipe'
 import DatasetSearchPipe from '../pipes/datasetSearch.pipe'
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstarp-css'
 
 
 @Component(

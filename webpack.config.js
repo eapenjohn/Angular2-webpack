@@ -13,7 +13,11 @@ module.exports =
         resolve:
         {
             root: path.join(__dirname, './app'),
-            extensions: ['', '.ts', '.js']
+            extensions: ['', '.ts', '.js'],
+            alias:
+            {
+                'bootstarp-css': 'bootstrap/dist/css/bootstrap.css'
+            }
         },
         preprocessors: {
             '**/*.js': file => babel.transform(file.content, { sourceMap: true })
