@@ -10,10 +10,14 @@ import {DatasetSelectorComponent} from './components/datasetSelector.component'
 
 import {APP_ROUTER_PROVIDERS} from './routes'
 import {RouterConfig,provideRouter,ROUTER_DIRECTIVES} from '@angular/router'
+
+import 'bootstarp-css'
+
+
 @Component({
     selector: "app",
     directives: [ROUTER_DIRECTIVES],
-    template: `   <a [routerLink]="['/dataset-lists']">dataset-lists</a>
+    template: ` 
     <router-outlet></router-outlet>
     `
 })

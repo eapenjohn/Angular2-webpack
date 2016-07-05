@@ -33,6 +33,11 @@ module.exports =
                     loader: 'ts'
                 },
                 {
+                    test: /\.html$/,
+                    exclude: /node_modules/,
+                    loader: 'raw'
+                },
+                {
 
                     test: /\.js$/,
                     loader: 'babel',
@@ -60,6 +65,7 @@ module.exports =
                     exclude: /node_modules/,
                     loader: 'file'
                 }
+                 
             ]
         },
         resolveLoader: {

@@ -3,25 +3,21 @@ import {RouterConfig, provideRouter, ROUTER_DIRECTIVES} from '@angular/router'
 import {DatasetListComponenet}  from './components/datasetList.component'
 import {CreateDataset} from './components/createDataset.componenet'
 
+import {HomeComponent}  from './components/dataset/home.component'
+
 
 export const  routes: RouterConfig = [
     {
         path: '',
-        redirectTo: 'dataset-lists',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
-        path: 'dataset-lists',
-        component: DatasetListComponenet,
+        path: 'home',
+        component: HomeComponent,
         children: [
-            {
-                path: 'create',
-                component: CreateDataset,
-            },
-            {
-                path:'',
-                 component: DatasetListComponenet
-            }
+           
+            
         ]
 
     }
