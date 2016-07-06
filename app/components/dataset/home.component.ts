@@ -13,5 +13,5 @@ import {ListsComponent} from './list/list.component'
 
 export class HomeComponent
 {
-  searchValue=''
+ 
 }

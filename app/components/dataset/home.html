@@ -4,11 +4,12 @@
     </div>
     <div class="row">
         <div class="col-md-5" style="border:2px solid black">
-           <input type="text" [(ngModel)]='searchValue' />
+        <input type="text" [(ngModel)]='searchValue' />
         <dataset-lists [searchValue]='searchValue'></dataset-lists>
         </div>
          <div class="col-md-7" style="border:2px solid blue">
           Contents
+          <router-outlet></router-outlet>
         </div>
     </div>
 </div>

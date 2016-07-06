@@ -7,3 +7,4 @@ testing
 e2e testing
 structuring the app
  using less
+using relative url

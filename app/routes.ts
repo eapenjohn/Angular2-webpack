@@ -4,9 +4,11 @@ import {DatasetListComponenet}  from './components/datasetList.component'
 import {CreateDataset} from './components/createDataset.componenet'
 
 import {HomeComponent}  from './components/dataset/home.component'
+import {DatasetViewComponent}  from './components/dataset/datasetView/datasetView.component'
+import {ListsComponent}  from './components/dataset/list/list.component'
 
 
-export const  routes: RouterConfig = [
+export const routes: RouterConfig = [
     {
         path: '',
         redirectTo: 'home',
@@ -15,11 +17,10 @@ export const  routes: RouterConfig = [
     {
         path: 'home',
         component: HomeComponent,
-        children: [
-           
-            
-        ]
-
+    },
+    {
+        path: 'home/:id',
+        component: DatasetViewComponent
     }
 ]
 
