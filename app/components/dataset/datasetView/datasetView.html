@@ -1,29 +1,26 @@
-<form class="form-horizontal" role="form">
-    <div class="form-group">
-        <label for="inputEmail3" class="col-md-5 control-label">Datset Name:</label>
-        <div class="col-sm-9">
-            <p class="help-block">{{dataset.name}}</p>
+<form name="LoginForm">
+    <div class="form-section">
+        <div class="form-group">
+            <label class="ng-binding">Datset Name:</label>
+            <div class="input-group">
+                {{dataset.name}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="ng-binding">Datset Description:</label>
+            <div class="input-group">
+                {{dataset.description}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="ng-binding">SupplireName:</label>
+            <div class="input-group">
+                {{dataset.supplierName}}
+            </div>
+        </div>
+        <div class="form-buttons text-center">
+            <a class='btn btn-default' [routerLink]="['..']">Go back</a>
+            <a class='btn btn-default' [routerLink]="['/home/edit/2']">Edit</a>
         </div>
     </div>
-
-    <div class="form-group">
-        <label for="inputEmail3" class="col-md-5  control-label">Datset Description:</label>
-        <div class="col-sm-9">
-            <p class="help-block">{{dataset.description}}</p>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="inputEmail3" class="col-md-5  control-label">SupplireName:</label>
-        <div class="col-sm-9">
-            <p class="help-block">{{dataset.supplierName}}</p>
-        </div>
-    </div>
-
-
-<a class='btn btn-default' [routerLink]="['/home/edit/2']">Edit</a>
-
-<a  class='btn btn-default' [routerLink]="['..']">Go back</a>
 </form>
-
-
