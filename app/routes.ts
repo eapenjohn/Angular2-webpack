@@ -17,11 +17,17 @@ export const routes: RouterConfig = [
     {
         path: 'home',
         component: HomeComponent,
+        children: [
+            {
+                path: ':id',
+                component: DatasetViewComponent
+            },
+            {
+                path: '',
+                component: ListsComponent
+            }
+        ]
     },
-    {
-        path: 'home/:id',
-        component: DatasetViewComponent
-    }
 ]
 
 export const APP_ROUTER_PROVIDERS = [provideRouter(routes)]
