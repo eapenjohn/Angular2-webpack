@@ -4,6 +4,7 @@ import {RouterConfig, provideRouter, ROUTER_DIRECTIVES} from '@angular/router'
 import {HomeComponent}  from './home.component'
 import {DatasetViewComponent}  from './datasetView/datasetView.component'
 import {ListsComponent}  from './list/list.component'
+import {DatasetEditComponent} from './edit/edit.component'
 
 
 export const routes: RouterConfig = [
@@ -23,6 +24,10 @@ export const routes: RouterConfig = [
             {
                 path: '',
                 component: ListsComponent
+            },
+            {
+                path:'edit/:id',
+                component:DatasetEditComponent
             }
         ]
     },

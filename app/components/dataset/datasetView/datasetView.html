@@ -1,8 +1,29 @@
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-md-5 control-label">Datset Name:</label>
+        <div class="col-sm-9">
+            <p class="help-block">{{dataset.name}}</p>
+        </div>
+    </div>
 
-<lablel>Dataset Name:
-    {{dataset.name}}
-</lablel>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-md-5  control-label">Datset Description:</label>
+        <div class="col-sm-9">
+            <p class="help-block">{{dataset.description}}</p>
+        </div>
+    </div>
 
-{{dataset.name}}
-ddd
-<a [routerLink]="['..']">Go back</a>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-md-5  control-label">SupplireName:</label>
+        <div class="col-sm-9">
+            <p class="help-block">{{dataset.supplierName}}</p>
+        </div>
+    </div>
+
+
+<a class='btn btn-default' [routerLink]="['/home/edit/2']">Edit</a>
+
+<a  class='btn btn-default' [routerLink]="['..']">Go back</a>
+</form>
+
+
