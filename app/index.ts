@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
-import {APP_ROUTER_PROVIDERS} from './routes'
+import {APP_ROUTER_PROVIDERS} from './components/dataset/routes'
 import {RouterConfig,provideRouter,ROUTER_DIRECTIVES} from '@angular/router'
 
 import 'bootstarp-css'
@@ -29,4 +29,6 @@ export class App {
      this.selection=$event;
      }
 }
-bootstrap(App, [APP_ROUTER_PROVIDERS]).catch(err => console.error(err));
+
+var routes=[...APP_ROUTER_PROVIDERS]
+bootstrap(App, [routes]).catch(err => console.error(err));
