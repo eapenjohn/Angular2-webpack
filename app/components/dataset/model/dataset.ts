@@ -1,10 +1,11 @@
 export class Dataset implements IDataset
 {
-    name:string;
-    description:string;
-    supplierName:string;
-    id:string;
-    hide:boolean=false;
+    constructor(public name, public description, public supplierName,public id)
+    {
+
+    }  
+
+     hide: boolean;
 }
 
 export interface IDataset 

@@ -1,6 +1,7 @@
 import {Component, Input} from "@angular/core"
 import {ROUTER_DIRECTIVES, ActivatedRoute, Router} from "@angular/router"
 
+import {Dataset} from "../model/dataset"
 import {DatasetService} from "../service/dataset.service"
 
 @Component({
@@ -11,24 +12,38 @@ import {DatasetService} from "../service/dataset.service"
 })
 
 export class DatasetViewComponent {
-    dataset:any;
-    constructor(private route: ActivatedRoute, private router: Router,private datasetservice:DatasetService) {
+
+    private sub;
+    public dataset;
+    constructor(private route: ActivatedRoute, private router: Router, private datasetservice: DatasetService) {
 
     }
 
-    goBack($event) {
+    goBack() {
         this.router.navigate(["/home"])
     }
 
     ngOnInit() {
-        var that=this;
-        this.route.params.subscribe(s => {
+        var that = this;
+        this.sub = this.route.params.subscribe(s => {
             let id = s['id'];
-            this.dataset=that.datasetservice.getById(id);
+           // var ttt = that;
+            that.datasetservice.getById(id).then(dataset =>
+            {
+
+                 that.dataset =dataset; 
+                }
+            );
         })
+    }
+
+    ngOnDestroy() {
+        if (this.sub) {
+            this.sub.unsubscribe()
+        }
     }
 
 
 }
-DatasetViewComponent['parameters'] = [ActivatedRoute, Router,DatasetService]
+DatasetViewComponent['parameters'] = [ActivatedRoute, Router, DatasetService]
 

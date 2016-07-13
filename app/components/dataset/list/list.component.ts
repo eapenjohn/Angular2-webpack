@@ -20,7 +20,10 @@ export class ListsComponent
  
  constructor(datasetservice:DatasetService)
  {
-   this.datasets=datasetservice.get();
+   this.datasets=datasetservice.get().then((response)=>
+   {
+     this.datasets=response;
+   });
  }
 }
 

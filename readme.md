@@ -9,5 +9,5 @@ structuring the app
  using less
 using relative url
 
-Styling of view page
+on edit save refresh the all data
 Using ^ in url

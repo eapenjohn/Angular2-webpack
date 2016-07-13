@@ -1,2 +1,26 @@
-welcome to edit
-    {{dataset.name}}
+<form name="editForm">
+    <div class="form-section">
+        <div class="form-group">
+            <label class="ng-binding">Datset Name:</label>
+            <div class="input-group">
+                <input type="text" [(ngModel)]="dataset.name" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="ng-binding">Datset Description:</label>
+            <div class="input-group">
+               <input type="text" [(ngModel)]="dataset.description" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="ng-binding">SupplireName:</label>
+            <div class="input-group">
+               <input type="text" [(ngModel)]="dataset.supplierName" >
+            </div>
+        </div>
+        <div class="form-buttons text-center">
+            <a class='btn btn-default' [routerLink]="['/home/1']">Cancel</a>
+            <a class='btn btn-default' (click)="save()">Save</a>
+        </div>
+    </div>
+</form>

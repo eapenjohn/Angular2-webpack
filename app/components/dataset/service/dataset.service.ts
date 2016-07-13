@@ -2,31 +2,38 @@ import {Injectable} from '@angular/core'
 
 import {Dataset} from '../model/dataset'
 
+var datasets=[
+    new Dataset("Geo data","Geo data provided by Met", "Met office",1),
+     new Dataset("Glass factory","City of  Denmark", "copen",1)
+]
+
+let datasetPromise=Promise.resolve(datasets);
 
 @Injectable()
 export class DatasetService {
     datasets: Array<Dataset> = []
     get() {
-
-        var dataset1 = new Dataset();
-        dataset1.id = '1'
-        dataset1.description = 'Geo data'
-        dataset1.name = 'Geo data'
-        dataset1.supplierName = 'Met Office'
-
-        var dataset2 = new Dataset();
-        dataset2.id = '2'
-        dataset2.description = 'Weather Data  '
-        dataset2.name = 'Wreather data'
-        dataset2.supplierName = 'Met Office'
-
-        this.datasets.push(dataset1)
-        this.datasets.push(dataset2)
-        return this.datasets;
+    
+    return datasetPromise;
+       
     }
 
     getById(id: string) {
-        var items = this.get().filter(s => s.id == id)
-        return items[0];
+        return datasetPromise.then(response=>
+        {
+         return response.find(dataset=> dataset.id == id);
+        })
+       
+    }
+
+    save(dataset: Dataset)
+    {
+        var item=this.datasets.filter(s=>s.id==dataset.id)[0];
+        item.description=dataset.description;
+        item.name=dataset.name;
+        item.supplierName=dataset.supplierName;
+
+        //this.datasets=[...this.datasets]
+       // item.description=dataset.description;
     }
 }

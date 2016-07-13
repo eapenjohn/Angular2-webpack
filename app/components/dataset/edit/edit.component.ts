@@ -1,21 +1,33 @@
-import {Component} from '@angular/core'
-import {Router,ActivatedRoute} from '@angular/router'
+import {Component,OnInit,OnDestroy} from '@angular/core'
+import {Router,ActivatedRoute,ROUTER_DIRECTIVES} from '@angular/router'
 
  import {DatasetService} from '../service/dataset.service'
 
 @Component({
     selector:'dataset-edit',
     templateUrl:'/app/components/dataset/edit/edit.html',
-    providers:[DatasetService]
+    providers:[DatasetService],
+    directives:[ROUTER_DIRECTIVES]
 })
 
 export class DatasetEditComponent
 {
     dataset;
-  constructor(private routes:ActivatedRoute,private datasetService :DatasetService)
+  constructor(private routes:ActivatedRoute,private datasetService :DatasetService,private router: Router)
   {
 
   }
+  save()
+  {
+      this.datasetService.save(this.dataset);
+
+      this.router.navigate(['/home/',this.dataset.id]);
+  }
+   
+     canDeactivate()
+   {
+       alert('ss')
+   }
 
   ngOnInit()
   {
@@ -23,10 +35,13 @@ export class DatasetEditComponent
     this.routes.params.subscribe(s=>
     {
          let id=s["id"];
-        this.dataset=that.datasetService.getById(id);
+        this.dataset=that.datasetService.getById(id).then((response)=>
+        {
+            that.dataset=response;
+        });
     })
 
   }
 }
 
-DatasetEditComponent['parameters']=[ActivatedRoute,DatasetService]
+DatasetEditComponent['parameters']=[ActivatedRoute,DatasetService,Router]
