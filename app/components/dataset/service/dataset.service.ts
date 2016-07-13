@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core'
+import {Http} from '@angular/http'
+import {Observable} from 'rxjs/Rx'
 
 import {Dataset} from '../model/dataset'
 
@@ -12,8 +14,16 @@ let datasetPromise=Promise.resolve(datasets);
 @Injectable()
 export class DatasetService {
     datasets: Array<Dataset> = []
+
+
+   constructor(private http:Http)
+   {
+
+   }
+
     get() {
     
+     this.http.get("http://sdasdasdas.com").map(r=>r.json()).subscribe(data=>{});
     return datasetPromise;
        
     }
@@ -37,3 +47,5 @@ export class DatasetService {
        // item.description=dataset.description;
     }
 }
+
+DatasetService['parameters']=[Http]
