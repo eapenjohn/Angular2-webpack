@@ -12,6 +12,7 @@ import {DatasetService} from '../service/dataset.service'
 
 export class DatasetEditComponent {
     dataset;
+    datasetRef;
     constructor(private routes: ActivatedRoute, private datasetService: DatasetService, private router: Router) {
 
     }
@@ -26,11 +27,13 @@ export class DatasetEditComponent {
     }
 
     ngOnInit() {
+     
         var that = this;
         this.routes.params.subscribe(s => {
             let id = s["id"];
             this.dataset = that.datasetService.getById(id).then((response) => {
-                that.dataset = response;
+                that.dataset=Object.assign({},response);
+                that.datasetRef = response;
             });
         })
 

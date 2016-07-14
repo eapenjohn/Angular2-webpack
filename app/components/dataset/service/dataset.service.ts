@@ -38,10 +38,18 @@ export class DatasetService {
 
     save(dataset: Dataset)
     {
-        var item=this.datasets.filter(s=>s.id==dataset.id)[0];
-        item.description=dataset.description;
-        item.name=dataset.name;
-        item.supplierName=dataset.supplierName;
+
+         datasetPromise.then((response)=>
+         {
+             var datasetRef=response.find(d=>d.id== dataset.id);
+             datasetRef.name=dataset.name;
+              datasetRef.supplierName=dataset.supplierName;
+               datasetRef.description=dataset.description;
+         })
+        // var item=datasets.filter(s=>s.id==dataset.id)[0];
+        // item.description=dataset.description;
+        // item.name=dataset.name;
+        // item.supplierName=dataset.supplierName;
 
         //this.datasets=[...this.datasets]
        // item.description=dataset.description;
