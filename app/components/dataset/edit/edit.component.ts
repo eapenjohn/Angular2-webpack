@@ -17,6 +17,7 @@ export class DatasetEditComponent {
 
     }
     save() {
+        
         this.datasetService.save(this.dataset);
 
         this.router.navigate(['/home/', this.dataset.id]);
