@@ -1,6 +1,6 @@
 var testsContext;
 
-// require('phantomjs-polyfill/bind-polyfill.js')
+require('phantomjs-polyfill/bind-polyfill.js')
 // require('angular')
 // require('angular-mocks')
 
