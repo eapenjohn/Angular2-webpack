@@ -20,7 +20,8 @@
     ],
     "version": "1.8.10",
     "files": [
-        "node_modules/angular2/typings/browser.d.ts"
+        // "node_modules/angular2/typings/browser.d.ts"
+        "typings/main.d.ts"
 
     ]
 }

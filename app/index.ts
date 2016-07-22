@@ -1,4 +1,4 @@
-
+/// <reference path="../typings/globals/jasmine/index.d.ts" />
 import 'reflect-metadata';
 import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'

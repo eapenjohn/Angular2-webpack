@@ -11,3 +11,5 @@ using relative url
 
 on edit save refresh the all data
 Using ^ in url
+
+getting intellisense from main.d.ts to all files without referring to everywhere 

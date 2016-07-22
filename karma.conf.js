@@ -16,7 +16,41 @@ module.exports = function(config) {
         singleRun: true,
         autoWatchBatchDelay: 300,
         files: [
-            'karma.test.js'
+            'node_modules/traceur/bin/traceur-runtime.js', {
+                pattern: 'node_modules/zone.js/dist/zone.js',
+                included: true,
+                watched: false
+            }, {
+                pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js',
+                included: true,
+                watched: false
+            }, {
+                pattern: 'node_modules/zone.js/dist/async-test.js',
+                included: true,
+                watched: false
+            }, {
+                pattern: 'node_modules/zone.js/dist/jasmine-patch.js',
+                included: true,
+                watched: false
+            }, {
+                pattern: 'node_modules/reflect-metadata/Reflect.js',
+                included: true,
+                watched: false
+            }, {
+                pattern: 'node_modules/rxjs/**',
+                included: false,
+                watched: false
+            }, {
+                pattern: 'node_modules/@angular/**/*.js',
+                included: false,
+                watched: false
+            }, {
+                pattern: 'app/**/*.spec.ts',
+                included: true
+            }, {
+                pattern: 'node_modules/babel-polyfill/browser.js',
+                instrument: false
+            }
         ],
         babelPreprocessor: {
             options: {
@@ -24,7 +58,7 @@ module.exports = function(config) {
             }
         },
         preprocessors: {
-            'karma.test.js': ['webpack', 'sourcemap'],
+            'app/**/*.spec.ts': ['webpack', 'sourcemap'],
             //'src/**/!(*.spec)+(.ts)': ['coverage']
         },
         webpackMiddleware: {

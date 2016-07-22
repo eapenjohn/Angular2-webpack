@@ -7,5 +7,5 @@ require('phantomjs-polyfill/bind-polyfill.js')
 testsContext = require.context('./app', true, /spec\.(t|j)s$/)
 testsContext.keys().forEach(testsContext)
 
-// testsContext = require.context('./test/mockups', true, /spec\.(t|j)s$/)
-testsContext.keys().forEach(testsContext)
+//  testsContext = require.context('./tt.spec', false, /spec\.(t|j)s$/)
+// testsContext.keys().forEach(testsContext)

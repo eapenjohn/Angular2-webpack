@@ -1,11 +1,14 @@
-import {Injectable} from '@angular/core'
-import {Dataset} from '../models/dataset'
+import {
+    Injectable
+} from '@angular/core'
+import {
+    Dataset
+} from '../models/dataset'
 @Injectable()
 export class DatasetService {
-    datasets: Array<Dataset> = [];
+    datasets: Array < Dataset > = [];
     constructor() {
-        var ss = '';
-        console.log('reached DatasetService constructor')
+        var ss = ''
     }
 
     get() {
@@ -16,25 +19,19 @@ export class DatasetService {
             dataset.name = 'name ' + i;
             dataset.supplierName = 'supplierName ' + i;
             dataset.id = 'id ' + i;
-            dataset.hide=false;
+            dataset.hide = false;
             this.datasets.push(dataset);
         }
-      //  return this.datasets;
+        //  return this.datasets;
     }
 
     add(dataset: Dataset) {
-     this.datasets=[...this.datasets,dataset]
-        // this.datasets.push(dataset);
-        // var temp = this.datasets;
-        // this.datasets = [];
-        // this.datasets = temp;
-
+        this.datasets = [...this.datasets, dataset]
     }
 
-    update(dataset:Dataset)
-    {
-     var index=this.datasets.indexOf(dataset);
-     this.datasets=[...this.datasets.slice(0,index),dataset,...this.datasets.slice(index+1)];
+    update(dataset: Dataset) {
+        var index = this.datasets.indexOf(dataset);
+        this.datasets = [...this.datasets.slice(0, index), dataset, ...this.datasets.slice(index + 1)];
     }
 
 
