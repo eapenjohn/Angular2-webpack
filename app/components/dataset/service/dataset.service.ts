@@ -14,7 +14,7 @@ import {
 
 var datasets = [
     new Dataset("Geo data", "Geo data provided by Met", "Met office", 1),
-    new Dataset("Glass factory", "City of  Denmark", "copen", 1)
+    new Dataset("Glass factory", "City of  Denmark", "copen", 2)
 ]
 
 let datasetPromise = Promise.resolve(datasets);
@@ -28,28 +28,33 @@ export class DatasetService {
 
     }
 
+    testHttp() {
+        this.http.get("http://foo.bar").map(r => r.json()).subscribe(data => {
+            // alert(data);
+        });
+    }
+
     get() {
 
-        // this.http.get("http://sdasdasdas.com").map(r => r.json()).subscribe(data => {});
         return datasetPromise;
 
     }
 
-    getById(id: string) {
+    getById(id: string | number) {
         return datasetPromise.then(response => {
             return response.find(dataset => dataset.id == id);
         })
-
     }
 
     save(dataset: Dataset) {
+        var datasetRef = datasets.find(s => s.id == dataset.id)
+        datasetRef.name = dataset.name;
+        datasetRef.supplierName = dataset.supplierName;
+        datasetRef.description = dataset.description;
+    }
 
-        datasetPromise.then((response) => {
-            var datasetRef = response.find(d => d.id == dataset.id);
-            datasetRef.name = dataset.name;
-            datasetRef.supplierName = dataset.supplierName;
-            datasetRef.description = dataset.description;
-        })
+    add(dataset: Dataset) {
+        datasets.push(dataset);
     }
 }
 

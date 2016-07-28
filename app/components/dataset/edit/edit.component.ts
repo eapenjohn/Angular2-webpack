@@ -1,7 +1,17 @@
-import {Component, OnInit, OnDestroy} from '@angular/core'
-import {Router, ActivatedRoute, ROUTER_DIRECTIVES} from '@angular/router'
+import {
+    Component,
+    OnInit,
+    OnDestroy
+} from '@angular/core'
+import {
+    Router,
+    ActivatedRoute,
+    ROUTER_DIRECTIVES
+} from '@angular/router'
 
-import {DatasetService} from '../service/dataset.service'
+import {
+    DatasetService
+} from '../service/dataset.service'
 
 @Component({
     selector: 'dataset-edit',
@@ -17,7 +27,7 @@ export class DatasetEditComponent {
 
     }
     save() {
-        
+
         this.datasetService.save(this.dataset);
 
         this.router.navigate(['/home/', this.dataset.id]);
@@ -28,12 +38,12 @@ export class DatasetEditComponent {
     }
 
     ngOnInit() {
-     
+
         var that = this;
         this.routes.params.subscribe(s => {
             let id = s["id"];
             this.dataset = that.datasetService.getById(id).then((response) => {
-                that.dataset=Object.assign({},response);
+                that.dataset = Object.assign({}, response);
                 that.datasetRef = response;
             });
         })
