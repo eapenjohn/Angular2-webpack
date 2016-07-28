@@ -19,10 +19,6 @@ import {
     ROUTER_DIRECTIVES
 } from '@angular/router'
 
-import {
-    TestGuard
-} from './components/dataset/guard/test.guard'
-
 import 'bootstarp-css'
 
 
@@ -45,4 +41,4 @@ export class App {
 }
 
 var routes = [...APP_ROUTER_PROVIDERS]
-bootstrap(App, [TestGuard, routes, HTTP_PROVIDERS]).catch(err => console.error(err));
+bootstrap(App, [routes, HTTP_PROVIDERS]).catch(err => console.error(err));
