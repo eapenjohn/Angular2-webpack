@@ -32,7 +32,7 @@ export class DatasetEditComponent {
         this.datasetService.save(this.dataset);
 
         this.dirty = false;
-        this.router.navigate(['/home/', this.dataset.id]);
+        this.router.navigate(['/dataset/', this.dataset.id]);
     }
 
     canDeactivate() {

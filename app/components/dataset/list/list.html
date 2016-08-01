@@ -1,10 +1,9 @@
-
-  <div class="row">
-    <div class="col-md-5">
-      <input type="text" [(ngModel)]='searchValue' />
-      <div *ngFor='let dataset of datasets | datasetsearch : searchValue'>
-        <a [routerLink]="['/home',dataset.id]">  {{dataset.name}} </a>
-        <dataset></dataset>
-      </div>
+<div class="row">
+  <div class="col-md-5">
+    <input type="text" [(ngModel)]='searchValue' />
+    <div *ngFor='let dataset of datasets | datasetsearch : searchValue'>
+      <a [routerLink]="['/dataset',dataset.id]">  {{dataset.name}} </a>
+      <dataset></dataset>
     </div>
   </div>
+</div>

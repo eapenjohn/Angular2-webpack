@@ -11,8 +11,14 @@ import {
 } from '@angular/http'
 
 import {
-    APP_ROUTER_PROVIDERS
+    APP_ROUTER_PROVIDERS,
+    DATASET_GUARDS
 } from './components/dataset/routes'
+
+import {
+    HOME_ROUTE_CONFIG
+} from './components/home/routes'
+
 import {
     RouterConfig,
     provideRouter,
@@ -40,5 +46,6 @@ export class App {
     }
 }
 
-var routes = [...APP_ROUTER_PROVIDERS]
-bootstrap(App, [routes, HTTP_PROVIDERS]).catch(err => console.error(err));
+var routes = [...HOME_ROUTE_CONFIG, ...APP_ROUTER_PROVIDERS]
+var guards = [...DATASET_GUARDS]
+bootstrap(App, [provideRouter(routes), ...guards, HTTP_PROVIDERS]).catch(err => console.error(err));

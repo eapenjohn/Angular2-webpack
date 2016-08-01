@@ -26,24 +26,21 @@ import {
 } from './guard'
 
 export const routes: RouterConfig = [{
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-}, {
-    path: 'home',
-    component: HomeComponent,
+    path: 'dataset',
     children: [{
-        path: ':id',
-        component: DatasetViewComponent
-    }, {
         path: '',
         component: ListsComponent
     }, {
+        path: ':id',
+        component: DatasetViewComponent
+    }, {
         path: 'edit/:id',
+        component: DatasetEditComponent,
         canActivate: [TestGuard],
-        canDeactivate: [EditDeactivateGuard],
-        component: DatasetEditComponent
+        canDeactivate: [EditDeactivateGuard]
     }]
-}, ]
+}]
 
-export const APP_ROUTER_PROVIDERS = [provideRouter(routes), TestGuard, EditDeactivateGuard]
+export const APP_ROUTER_PROVIDERS = routes;
+
+export const DATASET_GUARDS = [TestGuard, EditDeactivateGuard]
