@@ -31,7 +31,7 @@ export class DatasetEditComponent {
 
         this.datasetService.save(this.dataset);
 
-        this.dirty = true;
+        this.dirty = false;
         this.router.navigate(['/home/', this.dataset.id]);
     }
 
