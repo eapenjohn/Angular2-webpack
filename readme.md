@@ -18,4 +18,5 @@ using Observable SwitchMap
 
 CanDeactivate use form property to identify the change 
 Apply Bootstarp to the pages
+Apply SCSS
 
