@@ -19,7 +19,11 @@ import {
 
 import {
     TestGuard
-} from './guard/test.guard'
+} from './guard'
+
+import {
+    EditDeactivateGuard
+} from './guard'
 
 export const routes: RouterConfig = [{
     path: '',
@@ -37,8 +41,9 @@ export const routes: RouterConfig = [{
     }, {
         path: 'edit/:id',
         canActivate: [TestGuard],
+        canDeactivate: [EditDeactivateGuard],
         component: DatasetEditComponent
     }]
 }, ]
 
-export const APP_ROUTER_PROVIDERS = [provideRouter(routes), TestGuard]
+export const APP_ROUTER_PROVIDERS = [provideRouter(routes), TestGuard, EditDeactivateGuard]

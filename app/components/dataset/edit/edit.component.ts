@@ -23,6 +23,7 @@ import {
 export class DatasetEditComponent {
     dataset;
     datasetRef;
+    dirty = false;
     constructor(private routes: ActivatedRoute, private datasetService: DatasetService, private router: Router) {
 
     }
@@ -30,6 +31,7 @@ export class DatasetEditComponent {
 
         this.datasetService.save(this.dataset);
 
+        this.dirty = true;
         this.router.navigate(['/home/', this.dataset.id]);
     }
 
