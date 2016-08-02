@@ -2,8 +2,8 @@
   <div class="col-md-5">
     <input type="text" [(ngModel)]='searchValue' />
     <div *ngFor='let dataset of datasets | datasetsearch : searchValue'>
-      <a [routerLink]="['/dataset',dataset.id]">  {{dataset.name}} </a>
-      <dataset></dataset>
+      <a (click)="navigateToView(dataset)">  {{dataset.name}} </a>
+      <a class='btn btn-default' routerLink="1">Test Edit</a>
     </div>
   </div>
 </div>
