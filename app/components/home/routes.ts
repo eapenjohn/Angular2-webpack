@@ -8,9 +8,9 @@ import {
 } from './home.component'
 
 import {
-    ListsComponent
+    AdvertiseComponent
 }
-from '../dataset/list/list.component'
+from './advertise/advertise.component'
 
 const routes: RouterConfig = [{
     path: '',
@@ -21,6 +21,10 @@ const routes: RouterConfig = [{
         path: '',
         component: HomeComponent
     }]
+}, {
+    path: 'details-items',
+    component: AdvertiseComponent,
+    outlet: 'details'
 }]
 
 export const HOME_ROUTE_CONFIG = routes;

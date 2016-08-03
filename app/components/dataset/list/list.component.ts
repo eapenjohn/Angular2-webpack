@@ -46,6 +46,10 @@ export class ListsComponent {
       }
     });
   }
+
+  displayDeatils() {
+    this.router.navigateByUrl('/dataset(details:details-items)')
+  }
 }
 
 ListsComponent['parameters'] = [DatasetService, Router, ActivatedRoute]

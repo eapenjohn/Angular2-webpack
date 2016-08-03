@@ -16,6 +16,10 @@ import {
 } from './components/dataset/routes'
 
 import {
+    ListsComponent
+} from './components/dataset/list/list.component'
+
+import {
     HOME_ROUTE_CONFIG
 } from './components/home/routes'
 
@@ -30,9 +34,10 @@ import 'bootstarp-css'
 
 @Component({
     selector: "app",
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, ListsComponent],
     template: ` 
     <router-outlet></router-outlet>
+     <router-outlet name="details"></router-outlet>
     `
 })
 

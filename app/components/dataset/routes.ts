@@ -39,10 +39,6 @@ export const routes: RouterConfig = [{
         canActivate: [TestGuard],
         canDeactivate: [EditDeactivateGuard]
     }]
-}, {
-    path: 'details',
-    component: DatasetViewComponent,
-    outlet: 'deatails'
 }]
 
 export const APP_ROUTER_PROVIDERS = routes;
