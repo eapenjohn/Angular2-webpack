@@ -10,8 +10,10 @@ import {
 
 
 import {
-    Observable
-} from 'RxJS/RX'
+    Observable,
+    Subject
+} from 'rxjs/Rx'
+
 
 @Injectable()
 export class TestGuard implements CanActivate {
@@ -23,7 +25,13 @@ export class TestGuard implements CanActivate {
         // var promise = new Promise < boolean > (    )
         // return Promise.resolve(true);
         //return Observable.of(true);
-        return true;;
+        var sub = new Subject < boolean > ()
+
+        setTimeout(() => {
+            sub.next(true);
+            sub.complete()
+        }, 1000)
+        return sub;;
 
         // return new Promise < boolean > ((resolve) => {
         //     resolve(true)

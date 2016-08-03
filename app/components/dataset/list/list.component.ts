@@ -40,7 +40,10 @@ export class ListsComponent {
     //  this.router.navigate(['dataset', dataset.id]);
 
     this.router.navigate([dataset.id], {
-      relativeTo: this.route
+      relativeTo: this.route,
+      queryParams: {
+        description: dataset.name
+      }
     });
   }
 }

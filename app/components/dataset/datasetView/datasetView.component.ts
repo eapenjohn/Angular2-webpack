@@ -23,7 +23,7 @@ import {
 })
 
 export class DatasetViewComponent {
-
+    public decription;
     private sub;
     public dataset;
     constructor(private route: ActivatedRoute, private router: Router, private datasetservice: DatasetService) {
@@ -43,6 +43,11 @@ export class DatasetViewComponent {
 
                 that.dataset = dataset;
             });
+
+        })
+
+        this.router.routerState.queryParams.subscribe(params => {
+            this.decription = params["description"];
         })
     }
 
