@@ -48,7 +48,7 @@ export class ListsComponent {
   }
 
   displayDeatils() {
-    this.router.navigateByUrl('/dataset(details:details-items)')
+    this.router.navigateByUrl('/dataset(details:details-items;id:1)')
   }
 }
 

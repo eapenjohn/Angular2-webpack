@@ -66,13 +66,13 @@ module.exports = {
         modulesDirectories: ["node_modules"]
     },
     plugins: [
-        // new browserSync({
-        //     host: 'localhost',
-        //     port: 3200,
-        //     proxy: 'http://localhost:' + 3100,
-        //     // ui: false,
-        //     // online: false,
-        //     // notify: true
-        // })
+        new browserSync({
+            host: 'localhost',
+            port: 3200,
+            proxy: 'http://localhost:' + 3100,
+            // ui: false,
+            // online: false,
+            // notify: true
+        })
     ]
 }
