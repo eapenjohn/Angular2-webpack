@@ -26,6 +26,10 @@ import {
 } from './guard'
 
 export const routes: RouterConfig = [{
+    path: 'legacy',
+    redirectTo: '/dataset',
+    pathMatch: 'full'
+}, {
     path: 'dataset',
     children: [{
         path: '',
