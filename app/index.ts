@@ -6,6 +6,11 @@ import {
 import {
     Component
 } from '@angular/core'
+
+import {
+    HashLocationStrategy,
+    LocationStrategy
+} from '@angular/common'
 import {
     HTTP_PROVIDERS
 } from '@angular/http'
@@ -53,4 +58,10 @@ export class App {
 
 var routes = [...HOME_ROUTE_CONFIG, ...APP_ROUTER_PROVIDERS]
 var guards = [...DATASET_GUARDS]
-bootstrap(App, [provideRouter(routes), ...guards, HTTP_PROVIDERS]).catch(err => console.error(err));
+bootstrap(App, [provideRouter(routes), ...guards, HTTP_PROVIDERS,
+    //below provide is for enabling hashlocation stratagy
+    {
+        provide: LocationStrategy,
+        useClass: HashLocationStrategy
+    }
+]).catch(err => console.error(err));

@@ -1,6 +1,8 @@
 var browserSync = require('browser-sync-webpack-plugin');
 var path = require('path');
 var babel = require('babel-core');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     context: path.resolve(__dirname, 'app'),
     entry: './index.ts',
@@ -21,6 +23,7 @@ module.exports = {
         })
     },
     devtool: 'inline-source-map',
+
     module: {
         loaders: [{
                 test: /\.css$/,
@@ -66,6 +69,10 @@ module.exports = {
         modulesDirectories: ["node_modules"]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: '../index.html',
+            chunksSortMode: 'dependency'
+        }),
         new browserSync({
             host: 'localhost',
             port: 3200,
