@@ -15,7 +15,7 @@ import {
 
 @Component({
     selector: 'dataset-edit',
-    templateUrl: '/app/components/dataset/edit/edit.html',
+    template: require('./edit.html'),
     providers: [DatasetService],
     directives: [ROUTER_DIRECTIVES]
 })

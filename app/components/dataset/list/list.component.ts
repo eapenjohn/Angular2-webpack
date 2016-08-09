@@ -17,7 +17,7 @@ import {
 
 @Component({
   selector: 'dataset-lists',
-  templateUrl: '/app/components/dataset/list/list.html',
+  template: require('./list.html'),
   providers: [DatasetService],
   pipes: [SearchPipe],
   directives: [ROUTER_DIRECTIVES]

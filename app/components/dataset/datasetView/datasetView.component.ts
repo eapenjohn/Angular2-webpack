@@ -18,7 +18,7 @@ import {
 @Component({
     selector: 'dataset',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: '/app/components/dataset/datasetView/datasetView.html',
+    template: require('./datasetView.html'),
     providers: [DatasetService]
 })
 

@@ -8,6 +8,12 @@ import {
 } from '@angular/core'
 
 import {
+    provideForms,
+    disableDeprecatedForms
+} from '@angular/forms'
+
+
+import {
     HashLocationStrategy,
     LocationStrategy
 } from '@angular/common'
@@ -63,5 +69,6 @@ bootstrap(App, [provideRouter(routes), ...guards, HTTP_PROVIDERS,
     {
         provide: LocationStrategy,
         useClass: HashLocationStrategy
-    }
+    },
+    provideForms()
 ]).catch(err => console.error(err));
