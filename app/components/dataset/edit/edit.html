@@ -1,17 +1,21 @@
 <form #f="ngForm" *ngIf="dataset">
     <div class="form-section">
-        <div class="form-group">
-            <label class="ng-binding">Datset Name:</label>
-            <div class="input-group">
-                <input type="text" (keyup)='dirty=true;' required name='name' minlength="5" [(ngModel)]="dataset.name">
+        <fieldset ngModelGroup='mainFields' #mainFields='ngModelGroup'>
+            <legend [ngStyle]="{'color':mainFields.valid? 'black' :'red'}">Main Decription</legend>
+            <div class="form-group">
+                <label class="ng-binding">Datset Name:</label>
+                <div class="input-group">
+                    <input type="text" (keyup)='dirty=true;' required name='name' minlength="5" #cadsad="ngModel" [(ngModel)]="dataset.name">
+                    <div *ngIf="cadsad.errors?.required">This is a mandatory field</div>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="ng-binding">Datset Description:</label>
-            <div class="input-group">
-                <input type="text" [(ngModel)]="dataset.description" name='decription'>
+            <div class="form-group">
+                <label class="ng-binding">Datset Description:</label>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="dataset.description" name='decription'>
+                </div>
             </div>
-        </div>
+        </fieldset>
         <div class="form-group">
             <label class="ng-binding">SupplireName:</label>
             <div class="input-group">
@@ -22,5 +26,6 @@
             <a class='btn btn-default' [routerLink]="['/dataset/1']">Cancel</a>
             <button class='btn btn-default' [disabled]='!f.valid' (click)="save()">Save</button>
         </div>
+
     </div>
 </form>
