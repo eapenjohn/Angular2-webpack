@@ -5,7 +5,8 @@ import {
 import {
     REACTIVE_FORM_DIRECTIVES,
     FormGroup,
-    FormControl
+    FormControl,
+    Validators
 } from '@angular/forms'
 
 @Component({
@@ -19,9 +20,9 @@ export class NewDatasetComponent {
 
     constructor() {
         this.myForm = new FormGroup({
-            name: new FormControl("Name"),
-            description: new FormControl("description"),
-            supplierName: new FormControl("Supplier Name")
+            name: new FormControl("Name", [Validators.required]),
+            description: new FormControl("description", [Validators.maxLength(5)]),
+            supplierName: new FormControl("Supplier Name", [Validators.required])
         });
     }
 
