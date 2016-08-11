@@ -15,12 +15,16 @@ import {
   ActivatedRoute
 } from '@angular/router';
 
+import {
+  NewDatasetComponent
+} from '../new/new.component'
+
 @Component({
   selector: 'dataset-lists',
   template: require('./list.html'),
   providers: [DatasetService],
   pipes: [SearchPipe],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, NewDatasetComponent]
 })
 
 export class ListsComponent {
@@ -45,6 +49,13 @@ export class ListsComponent {
         description: dataset.name
       }
     });
+  }
+
+  navigateToNewDataset() {
+    this.router.navigate(['add/new'], {
+      relativeTo: this.route
+    })
+
   }
 
   displayDeatils() {

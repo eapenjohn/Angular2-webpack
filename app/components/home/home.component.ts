@@ -7,8 +7,8 @@ import {
 } from '@angular/router'
 
 @Component({
-    selector: 'home',
-    templateUrl: '/app/components/home/home.html',
+    selector: 'home-ss',
+    template: require('./home.html'),
     directives: [ROUTER_DIRECTIVES]
 })
 export class HomeComponent {

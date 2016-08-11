@@ -49,6 +49,7 @@ import 'bootstarp-css'
     template: ` 
     <router-outlet></router-outlet>
      <router-outlet name="details"></router-outlet>
+   
     `
 })
 

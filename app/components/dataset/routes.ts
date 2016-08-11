@@ -5,9 +5,6 @@ import {
 } from '@angular/router'
 
 import {
-    HomeComponent
-} from './home.component'
-import {
     DatasetViewComponent
 } from './datasetView/datasetView.component'
 import {
@@ -24,6 +21,10 @@ import {
 import {
     EditDeactivateGuard
 } from './guard'
+
+import {
+    NewDatasetComponent
+} from './new/new.component'
 
 export const routes: RouterConfig = [{
     path: 'legacy',
@@ -42,7 +43,17 @@ export const routes: RouterConfig = [{
         component: DatasetEditComponent,
         canActivate: [TestGuard],
         canDeactivate: [EditDeactivateGuard]
+    }, {
+        path: 'add',
+        children: [{
+            path: 'new',
+            component: NewDatasetComponent
+        }]
+
     }]
+}, {
+    path: 'dataset/edit',
+    component: NewDatasetComponent
 }]
 
 export const APP_ROUTER_PROVIDERS = routes;
