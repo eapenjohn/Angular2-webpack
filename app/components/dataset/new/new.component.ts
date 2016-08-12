@@ -3,6 +3,10 @@ import {
 } from '@angular/core'
 
 import {
+    Observable
+} from 'rxjs/Rx'
+
+import {
     REACTIVE_FORM_DIRECTIVES,
     FormGroup,
     FormControl,
@@ -24,6 +28,9 @@ export class NewDatasetComponent {
             description: new FormControl("description", [Validators.maxLength(5)]),
             supplierName: new FormControl("Supplier Name", [Validators.required])
         });
+
+        this.myForm.valueChanges.filter(() => true).do(form => console.log(form)).subscribe();
+
     }
 
 }
