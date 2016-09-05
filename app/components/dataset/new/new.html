@@ -1,0 +1,28 @@
+<form [formGroup]="myForm">
+    <div class="form-section">
+
+        <div class="form-group">
+            <label class="ng-binding">Dataset Name:</label>
+            <div class="input-group">
+                <input type="text" formControlName='name'>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="ng-binding">Dataset Description:</label>
+            <div class="input-group">
+                <input type="text" formControlName='description'>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="ng-binding">SupplireName:</label>
+            <div class="input-group">
+                <input type="text" formControlName='supplierName'>
+            </div>
+        </div>
+        <div class="form-buttons text-center">
+        </div>
+
+    </div>
+</form>

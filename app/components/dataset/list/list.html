@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-5">
+    <input type="text" [(ngModel)]='searchValue' />
+    <div *ngFor='let dataset of datasets'>
+      <span (click)='displayDeatils()'>{{dataset.name}}</span>
+      <a (click)="navigateToView(dataset)">  Display Details </a>
+
+    </div>
+  </div>
+</div>
+
+<a (click)='navigateToNewDataset()' routerLinkActive='menuActive'>New Dataset</a>
+
+<router-outlet name="details"></router-outlet>
