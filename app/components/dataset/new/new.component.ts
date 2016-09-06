@@ -39,4 +39,8 @@ export class NewDatasetComponent {
 
     }
 
+    save() {
+        alert('d')
+    }
+
 }
