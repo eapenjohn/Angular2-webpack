@@ -13,6 +13,10 @@ import {
     Validators
 } from '@angular/forms'
 
+import {
+    RequiredValidator
+} from './required.validator'
+
 @Component({
     selector: 'addd',
     template: require('./new.html'),
@@ -21,8 +25,10 @@ import {
 
 export class NewDatasetComponent {
     myForm: FormGroup;
+    category;
 
     constructor() {
+        this.category = new FormControl('category', [RequiredValidator])
         this.myForm = new FormGroup({
             name: new FormControl("Name", [Validators.required]),
             description: new FormControl("description", [Validators.maxLength(5)]),
