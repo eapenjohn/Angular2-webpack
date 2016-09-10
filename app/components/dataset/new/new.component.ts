@@ -19,8 +19,7 @@ import {
 
 @Component({
     selector: 'addd',
-    template: require('./new.html'),
-    directives: [REACTIVE_FORM_DIRECTIVES]
+    template: require('./new.html')
 })
 
 export class NewDatasetComponent {

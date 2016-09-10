@@ -16,10 +16,8 @@ import {
 } from "../service/dataset.service"
 
 @Component({
-    selector: 'dataset',
-    directives: [ROUTER_DIRECTIVES],
-    template: require('./datasetView.html'),
-    providers: [DatasetService]
+    // selector: 'dataset',
+    template: require('./datasetView.html')
 })
 
 export class DatasetViewComponent {

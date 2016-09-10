@@ -1,22 +1,12 @@
 import {
     Component
-} from '@angular/core'
-import {
-    ROUTER_DIRECTIVES
-} from '@angular/router';
-
-import {
-    ListsComponent
-} from './list/list.component'
-
+} from "@angular/core"
 
 @Component({
-    selector: 'main',
-    directives: [ROUTER_DIRECTIVES, ListsComponent],
-    template: require('./home.html')
+    // selector: 'dataset-home',
+    template: 'bsfbs'
 })
 
-
-export class HomeComponent {
+export class DatasetHomeComponent {
 
 }

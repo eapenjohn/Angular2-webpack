@@ -1,6 +1,6 @@
 import {
-    RouterConfig,
-    provideRouter,
+    Routes,
+    RouterModule,
     ROUTER_DIRECTIVES
 } from '@angular/router'
 
@@ -26,7 +26,7 @@ import {
     NewDatasetComponent
 } from './new/new.component'
 
-export const routes: RouterConfig = [{
+export const routes: Routes = [{
     path: 'legacy',
     redirectTo: '/dataset',
     pathMatch: 'full'
@@ -57,5 +57,7 @@ export const routes: RouterConfig = [{
 }]
 
 export const APP_ROUTER_PROVIDERS = routes;
+
+export const routing = RouterModule.forRoot(routes);
 
 export const DATASET_GUARDS = [TestGuard, EditDeactivateGuard]

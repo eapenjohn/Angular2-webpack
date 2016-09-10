@@ -6,25 +6,16 @@ import {
 import {
   DatasetService
 } from '../service/dataset.service'
-import {
-  SearchPipe
-} from './pipe/search.pipe'
+
 import {
   ROUTER_DIRECTIVES,
   Router,
   ActivatedRoute
 } from '@angular/router';
 
-import {
-  NewDatasetComponent
-} from '../new/new.component'
-
 @Component({
-  selector: 'dataset-lists',
-  template: require('./list.html'),
-  providers: [DatasetService],
-  pipes: [SearchPipe],
-  directives: [ROUTER_DIRECTIVES, NewDatasetComponent]
+  // selector: 'dataset-lists',
+  template: require('./list.html')
 })
 
 export class ListsComponent {

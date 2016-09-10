@@ -30,9 +30,9 @@ import {
     ListsComponent
 } from './components/dataset/list/list.component'
 
-import {
-    HOME_ROUTE_CONFIG
-} from './components/home/routes'
+// import {
+//     HOME_ROUTE_CONFIG
+// } from './components/home/routes'
 
 import {
     RouterConfig,
@@ -63,7 +63,10 @@ export class App {
     }
 }
 
-var routes = [...HOME_ROUTE_CONFIG, ...APP_ROUTER_PROVIDERS]
+
+// var routes = [...HOME_ROUTE_CONFIG, ...APP_ROUTER_PROVIDERS]
+
+var routes = [ ...APP_ROUTER_PROVIDERS]
 var guards = [...DATASET_GUARDS]
 bootstrap(App, [provideRouter(routes), ...guards, HTTP_PROVIDERS,
     //below provide is for enabling hashlocation stratagy
