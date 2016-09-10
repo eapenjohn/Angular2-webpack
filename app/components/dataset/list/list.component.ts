@@ -8,7 +8,7 @@ import {
 } from '../service/dataset.service'
 
 import {
-  ROUTER_DIRECTIVES,
+  // ROUTER_DIRECTIVES,
   Router,
   ActivatedRoute
 } from '@angular/router';

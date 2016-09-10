@@ -7,7 +7,7 @@ import {
 } from '@angular/http'
 
 import {
-    ROUTER_DIRECTIVES
+    RouterModule
 } from '@angular/router'
 
 import {
@@ -15,7 +15,6 @@ import {
 } from '@angular/platform-browser'
 
 import {
-    REACTIVE_FORM_DIRECTIVES,
     FormsModule,
     ReactiveFormsModule
 } from '@angular/forms'
@@ -60,9 +59,9 @@ import {
 
 
 @NgModule({
-    imports: [BrowserModule, routing, FormsModule, HttpModule, ReactiveFormsModule], // array of modules needed for this modules
+    imports: [BrowserModule, routing, RouterModule, FormsModule, HttpModule, ReactiveFormsModule], // array of modules needed for this modules
     //components and directives part of this module
-    declarations: [DatasetHomeComponent, DatasetViewComponent, ListsComponent, DatasetEditComponent, NewDatasetComponent, SearchPipe],
+    declarations: [DatasetHomeComponent, ListsComponent, DatasetViewComponent, DatasetEditComponent, NewDatasetComponent],
     //root component of the app
     bootstrap: [DatasetHomeComponent],
     //services used across the mpdule

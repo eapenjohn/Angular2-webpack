@@ -7,7 +7,7 @@ import {
 } from 'rxjs/Rx'
 
 import {
-    REACTIVE_FORM_DIRECTIVES,
+    // REACTIVE_FORM_DIRECTIVES,
     FormGroup,
     FormControl,
     Validators

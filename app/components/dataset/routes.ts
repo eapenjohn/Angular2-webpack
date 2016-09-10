@@ -1,7 +1,6 @@
 import {
     Routes,
-    RouterModule,
-    ROUTER_DIRECTIVES
+    RouterModule
 } from '@angular/router'
 
 import {
@@ -27,7 +26,7 @@ import {
 } from './new/new.component'
 
 export const routes: Routes = [{
-    path: 'legacy',
+    path: '',
     redirectTo: '/dataset',
     pathMatch: 'full'
 }, {

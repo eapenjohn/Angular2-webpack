@@ -3,7 +3,7 @@ import {
     Input
 } from "@angular/core"
 import {
-    ROUTER_DIRECTIVES,
+    // ROUTER_DIRECTIVES,
     ActivatedRoute,
     Router
 } from "@angular/router"
@@ -44,9 +44,9 @@ export class DatasetViewComponent {
 
         })
 
-        this.router.routerState.queryParams.subscribe(params => {
-            this.decription = params["description"];
-        })
+        // this.router.routerState.queryParams.subscribe(params => {
+        //     this.decription = params["description"];
+        // })
     }
 
     ngOnDestroy() {

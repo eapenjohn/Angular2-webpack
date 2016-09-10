@@ -6,7 +6,7 @@ import {
 import {
     Router,
     ActivatedRoute,
-    ROUTER_DIRECTIVES
+    // ROUTER_DIRECTIVES
 } from '@angular/router'
 
 import {
