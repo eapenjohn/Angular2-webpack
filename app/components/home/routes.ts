@@ -1,6 +1,6 @@
 import {
-    RouterConfig,
-    provideRouter
+    Routes,
+    RouterModule
 } from '@angular/router'
 
 import {
@@ -12,7 +12,7 @@ import {
 }
 from './advertise/advertise.component'
 
-const routes: RouterConfig = [{
+const routes: Routes = [{
     path: '',
     component: HomeComponent
 }, {
@@ -28,3 +28,5 @@ const routes: RouterConfig = [{
 }]
 
 export const HOME_ROUTE_CONFIG = routes;
+
+export const routing = RouterModule.forRoot(routes)

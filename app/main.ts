@@ -3,7 +3,7 @@ import {
 } from '@angular/platform-browser-dynamic'
 
 import {
-    DatasetModule
-} from './components/dataset/dataset.module'
+    HomeModule
+} from './components/home/home.module'
 
-platformBrowserDynamic().bootstrapModule(DatasetModule);
+platformBrowserDynamic().bootstrapModule(HomeModule);

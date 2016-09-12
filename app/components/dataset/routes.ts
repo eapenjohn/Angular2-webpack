@@ -26,7 +26,7 @@ import {
 } from './new/new.component'
 
 export const routes: Routes = [{
-    path: '',
+    path: 'legacy',
     redirectTo: '/dataset',
     pathMatch: 'full'
 }, {
