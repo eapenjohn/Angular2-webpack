@@ -12,14 +12,21 @@ import {
 }
 from './advertise/advertise.component'
 
+
+import {
+    RootComponent
+}
+from './root/root.component'
+
+
 const routes: Routes = [{
     path: '',
-    component: HomeComponent
+    component: RootComponent
 }, {
     path: 'home',
     children: [{
         path: '',
-        component: HomeComponent
+        component: RootComponent
     }]
 }, {
     path: 'details-items',

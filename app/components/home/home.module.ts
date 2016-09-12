@@ -20,6 +20,11 @@ import {
 from './home.component'
 
 import {
+    RootComponent
+}
+from './root/root.component'
+
+import {
     routing
 } from './routes'
 
@@ -35,7 +40,7 @@ from './advertise/advertise.component'
 
 @NgModule({
     imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule],
-    declarations: [HomeComponent, AdvertiseComponent],
+    declarations: [HomeComponent, AdvertiseComponent, RootComponent],
     bootstrap: [HomeComponent]
 })
 
