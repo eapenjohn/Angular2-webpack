@@ -7,15 +7,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" class="active" [routerLink]='["home"]'>DMS</a>
+            <a class="navbar-brand" [routerLink]='["home"]'>DMS</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a [routerLink]='["dataset/add/new"]'>Create Dataset</a>
+                    <a href='' [routerLink]='["dataset/add/new"]'>Create Dataset</a>
                 </li>
                 <li>
-                    <a [routerLink]='["/legacy"]'>Datasets</a>
+                    <a href='' [routerLink]='["/legacy"]'>Datasets</a>
                 </li>
             </ul>
         </div>
@@ -31,7 +31,6 @@
                     <div class="col-lg-1 col-md-3"></div>
                     <div class="col-lg-10 col-md-6">
                         <h1>Dataset Management Systems</h1>
-                        <a [routerLink]='[ "/legacy "] '>Dataset</a>
                         <router-outlet></router-outlet>
                     </div>
                     <div class="col-lg-1 col-md-3">

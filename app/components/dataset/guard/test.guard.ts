@@ -30,7 +30,7 @@ export class TestGuard implements CanActivate {
         setTimeout(() => {
             sub.next(true);
             sub.complete()
-        }, 1000)
+        }, 10000)
         return sub;;
 
         // return new Promise < boolean > ((resolve) => {

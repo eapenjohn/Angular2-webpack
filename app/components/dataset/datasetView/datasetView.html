@@ -1,27 +1,25 @@
 <form name="LoginForm" *ngIf="dataset">
-    <div class="form-section">
-        <div class="form-group">
-            <label class="ng-binding">Datset Name:</label>
-            <div class="input-group">
-                {{dataset.name}}
-            </div>
+    <div class="form-group">
+        <label class="control-label">Datset Name:</label>
+        <div class="control-label">
+            {{dataset.name}}
         </div>
-        <div class="form-group">
-            <label class="ng-binding">Datset Description:</label>
-            <div class="input-group">
-                {{dataset.description}}
-            </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Datset Description:</label>
+        <div class="control-label">
+            {{dataset.description}}
         </div>
-        <div class="form-group">
-            <label class="ng-binding">SupplireName:</label>
-            <div class="input-group">
-                {{dataset.supplierName}}
-            </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">SupplireName:</label>
+        <div class="control-label">
+            {{dataset.supplierName}}
         </div>
-        <div class="form-buttons text-center">
-            <a class='btn btn-default' (click)="goBack()">Go back</a>
-            <a class='btn btn-default' routerLink='/home'>Home</a>
-            <a class='btn btn-default' [routerLink]="['/dataset/edit',dataset.id]">Edit</a>
-        </div>
+    </div>
+    <div class="form-buttons">
+        <a class='btn btn-default' (click)="goBack()">Go back</a>
+        <a class='btn btn-default' routerLink='/home'>Home</a>
+        <a class='btn btn-default' [routerLink]="['/dataset/edit',dataset.id]">Edit</a>
     </div>
 </form>

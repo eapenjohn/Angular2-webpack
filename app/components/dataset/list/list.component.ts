@@ -8,7 +8,6 @@ import {
 } from '../service/dataset.service'
 
 import {
-  // ROUTER_DIRECTIVES,
   Router,
   ActivatedRoute
 } from '@angular/router';
@@ -33,13 +32,14 @@ export class ListsComponent {
     // this.router.navigateByUrl('/dataset/' + dataset.id)
 
     //  this.router.navigate(['dataset', dataset.id]);
-
     this.router.navigate([dataset.id], {
       relativeTo: this.route,
       queryParams: {
         description: dataset.name
       }
     });
+
+    // this.router.navigate(["dataset", dataset.id]);
   }
 
   navigateToNewDataset() {

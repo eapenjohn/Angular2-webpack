@@ -23,9 +23,9 @@
         <tbody>
           <tr *ngFor='let dataset of datasets'>
             <td>{{dataset.id}}</td>
-            <td><span (click)='displayDeatils()'>{{dataset.name}}</span></td>
+            <td><a (click)='navigateToView(dataset)'>{{dataset.name}}</a></td>
             <td>{{dataset.description}}</td>
-            <td>{{dataset.supplierName}}
+            <td> <a click='displayDeatils()'> {{dataset.supplierName}} </a>
             </td>
           </tr>
         </tbody>
@@ -34,4 +34,3 @@
     </div>
   </div>
 </div>
-<router-outlet name="details"></router-outlet>
