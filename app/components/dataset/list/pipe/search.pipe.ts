@@ -1,13 +1,13 @@
-import {Pipe} from '@angular/core'
+import {
+    Pipe
+} from '@angular/core'
 
 @Pipe({
-name:'datasetsearch'
+    name: 'datasetsearch'
 })
 
-export class SearchPipe
-{
-    transform(data:Array<any>,selector)
-    {
-       return data.filter((item)=> item.name.indexOf(selector) != -1);
+export class SearchPipe {
+    transform(data: Array < any > , selector) {
+        return data == undefined ? [] : data.filter((item) => item.name.indexOf(selector) != -1);
     }
 }

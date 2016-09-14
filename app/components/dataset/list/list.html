@@ -3,7 +3,7 @@
 
     <div class="panel panel-default panel-primary">
       <div class="panel-heading">Datasets
-        <div class="pull-right"> <input type="text" [(ngModel)]='searchValue' /></div>
+        <div class="pull-right"><input type="text" style="color:black" [(ngModel)]='searchValue' /></div>
       </div>
       <table class="table">
         <thead>
@@ -21,7 +21,7 @@
           </th>
         </thead>
         <tbody>
-          <tr *ngFor='let dataset of datasets'>
+          <tr *ngFor='let dataset of datasets | datasetsearch:searchValue'>
             <td>{{dataset.id}}</td>
             <td><a (click)='navigateToView(dataset)'>{{dataset.name}}</a></td>
             <td>{{dataset.description}}</td>

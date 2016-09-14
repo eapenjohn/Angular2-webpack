@@ -62,7 +62,7 @@ import {
     // array of modules needed for this modules
     imports: [BrowserModule, routing, RouterModule, FormsModule, HttpModule, ReactiveFormsModule],
     //components and directives part of this module
-    declarations: [DatasetHomeComponent, ListsComponent, DatasetViewComponent, DatasetEditComponent, NewDatasetComponent],
+    declarations: [DatasetHomeComponent, ListsComponent, DatasetViewComponent, DatasetEditComponent, NewDatasetComponent, SearchPipe],
     //root component of the app
     bootstrap: [DatasetHomeComponent],
     //services used across the module and guards
