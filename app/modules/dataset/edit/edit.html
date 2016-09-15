@@ -1,0 +1,30 @@
+<form #f="ngForm" *ngIf="dataset" class="form-horizontal">
+    <fieldset ngModelGroup='mainFields' #mainFields='ngModelGroup'>
+        <legend [ngStyle]="{'color':mainFields.valid? 'black' :'red'}">Main Decription</legend>
+        <div class="form-group">
+            <label class="ng-binding col-sm-2 control-label">Datset Name:</label>
+            <div class="col-sm-5">
+                <input type="text" (keyup)='dirty=true;' required name='name' minlength="5" class="form-control" #cadsad="ngModel" [(ngModel)]="dataset.name">
+                <div *ngIf="cadsad.errors?.required">This is a mandatory field</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="ng-binding col-sm-2 control-label">Datset Description:</label>
+            <div class="col-sm-5">
+                <input type="text" [(ngModel)]="dataset.description" class="form-control" name='decription'>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <label class="ng-binding col-sm-2 control-label">SupplireName:</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="dataset.supplierName" class="form-control" name='supplierName'>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a class='btn btn-default' [routerLink]="['/dataset/1']">Cancel</a>
+            <button class='btn btn-default' [disabled]='!f.valid' (click)="save()">Save</button>
+        </div>
+    </div>
+</form>
