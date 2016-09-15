@@ -71,7 +71,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: '../index.html',
-            chunksSortMode: 'dependency'
+            chunksSortMode: 'dependency',
+            scripts: ['./dist/bundle.js']
         }),
         new browserSync({
             host: 'localhost',
