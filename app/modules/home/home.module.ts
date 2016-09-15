@@ -13,6 +13,11 @@ import {
     BrowserModule
 } from '@angular/platform-browser'
 
+import {
+    LocationStrategy,
+    HashLocationStrategy,
+    PathLocationStrategy
+} from '@angular/common'
 
 import {
     HomeComponent
@@ -41,7 +46,11 @@ from './advertise/advertise.component'
 @NgModule({
     imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule],
     declarations: [HomeComponent, AdvertiseComponent, RootComponent],
-    bootstrap: [HomeComponent]
+    bootstrap: [HomeComponent],
+    providers: [{
+        provide: LocationStrategy,
+        useClass: HashLocationStrategy
+    }]
 })
 
 export class HomeModule {

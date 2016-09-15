@@ -7,7 +7,6 @@ import {
 } from 'rxjs/Rx'
 
 import {
-    // REACTIVE_FORM_DIRECTIVES,
     FormGroup,
     FormControl,
     Validators
@@ -27,11 +26,11 @@ export class NewDatasetComponent {
     category;
 
     constructor() {
-        this.category = new FormControl('category', [RequiredValidator])
+        this.category = new FormControl('', [RequiredValidator])
         this.myForm = new FormGroup({
-            name: new FormControl("Name", [Validators.required]),
-            description: new FormControl("description", [Validators.maxLength(5)]),
-            supplierName: new FormControl("Supplier Name", [Validators.required])
+            name: new FormControl("", [Validators.required]),
+            description: new FormControl("", [Validators.maxLength(5)]),
+            supplierName: new FormControl("", [Validators.required])
         });
 
         this.myForm.valueChanges.filter(() => true).do(form => console.log(form)).subscribe();

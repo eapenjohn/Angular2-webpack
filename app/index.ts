@@ -4,6 +4,6 @@ import {
 
 import {
     HomeModule
-} from './components/home/home.module'
+} from './modules/home/home.module'
 
 platformBrowserDynamic().bootstrapModule(HomeModule);

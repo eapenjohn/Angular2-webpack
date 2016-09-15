@@ -26,7 +26,7 @@ const routes: Routes = [{
     path: 'home',
     children: [{
         path: '',
-        component: RootComponent
+        component: RootComponent,
     }]
 }, {
     path: 'details-items',
