@@ -38,13 +38,17 @@ import {
 } from '../dataset/dataset.module'
 
 import {
+    LoginModule
+} from '../login'
+
+import {
     AdvertiseComponent
 }
 from './advertise/advertise.component'
 
 
 @NgModule({
-    imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule],
+    imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule, LoginModule],
     declarations: [HomeComponent, AdvertiseComponent, RootComponent],
     bootstrap: [HomeComponent],
     providers: [{
