@@ -15,7 +15,7 @@ import {
 } from 'rxjs/Rx'
 
 
-@Injectable()
+// @Injectable()
 export class TestGuard implements CanActivate {
 
     constructor() {}

@@ -14,10 +14,15 @@ import {
     routing
 } from './routes'
 
+import {
+    LoginActivateGuard
+} from './guard'
+
 
 @NgModule({
     imports: [RouterModule, routing],
-    declarations: [LoginComponent]
+    declarations: [LoginComponent],
+    providers: [LoginActivateGuard]
 })
 
 export class LoginModule {

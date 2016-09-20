@@ -25,6 +25,10 @@ import {
     NewDatasetComponent
 } from './new/new.component'
 
+import {
+    LoginActivateGuard
+} from '../login/guard'
+
 export const routes: Routes = [{
     path: 'legacy',
     redirectTo: '/dataset',
@@ -40,12 +44,13 @@ export const routes: Routes = [{
     }, {
         path: 'edit/:id',
         component: DatasetEditComponent,
-        canActivate: [TestGuard],
+        canActivate: [TestGuard, LoginActivateGuard],
         canDeactivate: [EditDeactivateGuard]
     }, {
         path: 'add',
         children: [{
             path: 'new',
+            canActivate: [LoginActivateGuard],
             component: NewDatasetComponent
         }]
 
