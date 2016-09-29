@@ -10,19 +10,26 @@ import {
     Subject
 } from 'rxjs/Rx'
 
+import {
+    LoginService,
+    ILoginService
+} from '../service'
+
 export class LoginActivateGuard implements CanActivate {
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private loginservice: ILoginService) {
 
     }
 
     canActivate(route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot) {
-        this.router.navigate(['/login']);
+        if (!this.loginservice.login()) {
+            this.router.navigate(['/login']);
+        }
         return true;
     }
 
 
 }
 
-LoginActivateGuard['parameters'] = [Router]
+LoginActivateGuard['parameters'] = [Router, LoginService]

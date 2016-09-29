@@ -2,7 +2,7 @@ var browserSync = require('browser-sync-webpack-plugin');
 var path = require('path');
 var babel = require('babel-core');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+console.log();
 module.exports = {
     context: path.resolve(__dirname, 'app'),
     entry: './index.ts',
@@ -11,10 +11,11 @@ module.exports = {
         path: __dirname
     },
     resolve: {
-        root: path.join(__dirname, './app'),
+        root: path.join(__dirname),
         extensions: ['', '.ts', '.js'],
         alias: {
-            'bootstarp-css': 'bootstrap/dist/css/bootstrap.css'
+            'bootstarp-css': 'bootstrap/dist/css/bootstrap.css',
+            'config': 'config/config.ts'
         }
     },
     preprocessors: {

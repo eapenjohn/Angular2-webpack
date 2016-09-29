@@ -1,10 +1,20 @@
 import {
-    NgModule
+    NgModule,
+
 } from '@angular/core'
 
 import {
     RouterModule
 } from '@angular/router'
+
+import {
+    BrowserModule
+} from '@angular/platform-browser'
+
+import {
+    ReactiveFormsModule,
+    FormsModule
+} from '@angular/forms'
 
 import {
     LoginComponent
@@ -18,13 +28,21 @@ import {
     LoginActivateGuard
 } from './guard'
 
+import {
+    LoginService
+} from './service'
+
+
 
 @NgModule({
-    imports: [RouterModule, routing],
+    imports: [RouterModule, routing, ReactiveFormsModule, FormsModule, BrowserModule],
     declarations: [LoginComponent],
-    providers: [LoginActivateGuard]
+    providers: [LoginActivateGuard, LoginService]
 })
 
 export class LoginModule {
+    constructor() {
+
+    }
 
 }
