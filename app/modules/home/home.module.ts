@@ -38,6 +38,10 @@ import {
 } from '../dataset/dataset.module'
 
 import {
+    CommonModule
+} from '../common/common.module'
+
+import {
     LoginModule
 } from '../login'
 
@@ -48,7 +52,7 @@ from './advertise/advertise.component'
 
 
 @NgModule({
-    imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule, LoginModule],
+    imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule, LoginModule, CommonModule],
     declarations: [HomeComponent, AdvertiseComponent, RootComponent],
     bootstrap: [HomeComponent],
     providers: [{

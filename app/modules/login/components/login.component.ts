@@ -18,6 +18,7 @@ export class LoginComponent {
     loginForm;
 
     constructor() {
+        alert(Config.AUTH_URL)
         this.loginForm = new FormGroup({
             email: new FormControl("", [Validators.required]),
             password: new FormControl('', Validators.required)
@@ -26,6 +27,6 @@ export class LoginComponent {
 
     login() {
         alert('s')
-        alert(Config.AUTH_URL)
+
     }
 }

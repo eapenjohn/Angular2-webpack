@@ -47,6 +47,7 @@ export class DatasetService {
     }
 
     save(dataset: Dataset) {
+        this.testHttp();
         var datasetRef = datasets.find(s => s.id == dataset.id)
         datasetRef.name = dataset.name;
         datasetRef.supplierName = dataset.supplierName;
@@ -54,6 +55,7 @@ export class DatasetService {
     }
 
     add(dataset: Dataset) {
+
         datasets.push(dataset);
     }
 }

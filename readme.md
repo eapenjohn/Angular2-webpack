@@ -8,3 +8,7 @@ configure user authentication
 	
 
 how to share config information 
+
+append token,
+Change url,
+Intercept 401

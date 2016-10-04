@@ -10,7 +10,7 @@ export class LoginService implements ILoginService {
     }
 
     login() {
-        return false;
+        return true;
     }
 }
 
