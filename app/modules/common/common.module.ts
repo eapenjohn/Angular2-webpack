@@ -21,12 +21,10 @@ import {
 } from '../mockups/api/dataset'
 
 @NgModule({
-    // declarations: [Dataset],
-
-    providers: [{
+    providers: [Dataset, {
         provide: Http,
-        useFactory: (backend, defaultOptions: RequestOptions) => new HttpInterceptor(backend, defaultOptions),
-        deps: [MockBackend, RequestOptions]
+        useFactory: (Dataset, defaultOptions: RequestOptions) => new HttpInterceptor(Dataset, defaultOptions),
+        deps: [Dataset, RequestOptions]
     }]
 
 })

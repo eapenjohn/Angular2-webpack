@@ -10,16 +10,22 @@ import {
 
 
 import {
-    Component
+    Component,
+    Injectable
 } from '@angular/core'
 
 
+// @Component({
+//     selector: "datasetname",
+//     template: "sdsad"
+// })
 
-export class Dataset {
-    connection;
+@Injectable()
+export class Dataset extends MockBackend {
     constructor(backend: MockBackend) {
-        console.log('mockRespond');
-        backend.connections.subscribe(c => {
+        super();
+        // console.log('mockRespond');
+        this.connections.subscribe(c => {
             c.mockRespond(new Response(new ResponseOptions({
                 body: "sadsadsa"
             })))
@@ -31,4 +37,4 @@ export class Dataset {
 
 }
 
-Dataset['parameters'] = [MockBackend]
+//Dataset['parameters'] = [MockBackend]
