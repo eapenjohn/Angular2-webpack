@@ -9,14 +9,24 @@ import {
 } from '@angular/http'
 
 import {
+    MockBackend
+} from '@angular/http/testing'
+
+import {
     HttpInterceptor
 } from './http.interceptor'
 
+import {
+    Dataset
+} from '../mockups/api/dataset'
+
 @NgModule({
+    // declarations: [Dataset],
+
     providers: [{
         provide: Http,
-        useFactory: (backend: XHRBackend, defaultOptions: RequestOptions) => new HttpInterceptor(backend, defaultOptions),
-        deps: [XHRBackend, RequestOptions]
+        useFactory: (backend, defaultOptions: RequestOptions) => new HttpInterceptor(backend, defaultOptions),
+        deps: [MockBackend, RequestOptions]
     }]
 
 })

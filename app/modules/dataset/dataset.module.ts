@@ -7,6 +7,10 @@ import {
 } from '@angular/http'
 
 import {
+    MockBackend
+} from '@angular/http/testing'
+
+import {
     RouterModule
 } from '@angular/router'
 
@@ -66,7 +70,7 @@ import {
     //root component of the app
     bootstrap: [DatasetHomeComponent],
     //services used across the module and guards
-    providers: [DatasetService, EditDeactivateGuard, TestGuard]
+    providers: [DatasetService, EditDeactivateGuard, TestGuard, MockBackend]
 })
 
 export class DatasetModule {

@@ -29,13 +29,13 @@ export class DatasetService {
     }
 
     testHttp() {
-        this.http.get("http://foo.bar").map(r => r.json()).subscribe(data => {
-            // alert(data);
+        this.http.get("http://llll.com").subscribe(data => {
+            alert('data');
         });
     }
 
     get() {
-
+        this.testHttp();
         return datasetPromise;
 
     }

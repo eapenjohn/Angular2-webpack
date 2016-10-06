@@ -51,9 +51,16 @@ import {
 from './advertise/advertise.component'
 
 
+import {
+    Dataset
+} from '../mockups/api/dataset'
+
 @NgModule({
-    imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule, LoginModule, CommonModule],
-    declarations: [HomeComponent, AdvertiseComponent, RootComponent],
+    imports: [BrowserModule, routing, RouterModule,
+        HttpModule, DatasetModule, LoginModule,
+        CommonModule
+    ],
+    declarations: [HomeComponent, AdvertiseComponent, RootComponent, Dataset],
     bootstrap: [HomeComponent],
     providers: [{
         provide: LocationStrategy,
