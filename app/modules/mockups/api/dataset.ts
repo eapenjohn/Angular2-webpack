@@ -20,14 +20,16 @@ import {
 //     template: "sdsad"
 // })
 
+var dataset = require('./dataset.json')
+
 @Injectable()
 export class Dataset extends MockBackend {
-    constructor(backend: MockBackend) {
+    constructor() {
         super();
         // console.log('mockRespond');
         this.connections.subscribe(c => {
             c.mockRespond(new Response(new ResponseOptions({
-                body: "sadsadsa"
+                body: dataset
             })))
         });
         // this.connection.mockRespond(new Response(new ResponseOptions({

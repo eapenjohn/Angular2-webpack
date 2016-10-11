@@ -1,0 +1,25 @@
+ [{
+     "name": "Geo data",
+     "description": "Geo data provided by Met",
+     "supplierName": "Met office",
+     "id": "1",
+     "visible": true
+ }, {
+     "name": "Geo data1",
+     "description": "Geo data provided by Met1",
+     "supplierName": "Met office",
+     "id": "2",
+     "visible": true
+ }, {
+     "name": "Geo data3",
+     "description": "Geo data provided by Met3",
+     "supplierName": "Met office",
+     "id": "3",
+     "visible": true
+ }, {
+     "name": "Geo data4",
+     "description": "Geo data provided by Met4",
+     "supplierName": "Met office",
+     "id": "4",
+     "visible": true
+ }]

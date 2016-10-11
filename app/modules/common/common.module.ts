@@ -22,13 +22,19 @@ import {
 
 @NgModule({
     providers: [Dataset, {
+        provide: MockBackend,
+        useFactory: () => new Dataset()
+    }, {
         provide: Http,
-        useFactory: (Dataset, defaultOptions: RequestOptions) => new HttpInterceptor(Dataset, defaultOptions),
-        deps: [Dataset, RequestOptions]
+        useFactory: (MockBackend, defaultOptions: RequestOptions) => new HttpInterceptor(MockBackend, defaultOptions),
+        deps: [MockBackend, RequestOptions]
     }]
 
 })
 
 export class CommonModule {
+    constructor() {
+
+    }
 
 }
