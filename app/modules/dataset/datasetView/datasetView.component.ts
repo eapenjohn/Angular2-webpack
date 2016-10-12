@@ -37,7 +37,7 @@ export class DatasetViewComponent {
         this.sub = this.route.params.subscribe(s => {
             let id = s['id'];
             // var ttt = that;
-            that.datasetservice.getById(id).then(dataset => {
+            that.datasetservice.getById(id).subscribe(dataset => {
 
                 that.dataset = dataset;
             });

@@ -23,7 +23,7 @@ export class ListsComponent {
   datasets;
 
   constructor(datasetservice: DatasetService, private router: Router, private route: ActivatedRoute) {
-    datasetservice.get().then((response) => {
+    datasetservice.get().subscribe((response) => {
       this.datasets = response;
     });
   }

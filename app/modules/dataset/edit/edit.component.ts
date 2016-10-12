@@ -43,7 +43,7 @@ export class DatasetEditComponent {
         var that = this;
         this.routes.params.subscribe(s => {
             let id = s["id"];
-            this.dataset = that.datasetService.getById(id).then((response) => {
+            that.datasetService.getById(id).subscribe((response) => {
                 that.dataset = Object.assign({}, response);
                 that.datasetRef = response;
             });

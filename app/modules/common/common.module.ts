@@ -16,18 +16,33 @@ import {
     HttpInterceptor
 } from './http.interceptor'
 
+// import {
+//     Dataset
+// } from '../mockups/api/dataset'
+
+// @NgModule({
+//     providers: [Dataset, {
+//         provide: MockBackend,
+//         useFactory: () => new Dataset()
+//     }, {
+//         provide: Http,
+//         useFactory: (MockBackend, defaultOptions: RequestOptions) => new HttpInterceptor(MockBackend, defaultOptions),
+//         deps: [MockBackend, RequestOptions]
+//     }]
+
+// })
+
 import {
-    Dataset
-} from '../mockups/api/dataset'
+    MockModule
+} from '../mockups/'
 
 @NgModule({
-    providers: [Dataset, {
-        provide: MockBackend,
-        useFactory: () => new Dataset()
-    }, {
+    imports: [MockModule],
+    providers: [{
         provide: Http,
-        useFactory: (MockBackend, defaultOptions: RequestOptions) => new HttpInterceptor(MockBackend, defaultOptions),
-        deps: [MockBackend, RequestOptions]
+        useClass: HttpInterceptor,
+        deps: [XHRBackend, RequestOptions]
+
     }]
 
 })

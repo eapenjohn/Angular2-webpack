@@ -29,20 +29,22 @@ export class DatasetService {
     }
 
     testHttp() {
-        this.http.get("http://llll.com").subscribe(data => {
-            alert('data');
-        });
+
     }
 
     get() {
-        this.testHttp();
-        return datasetPromise;
-
+        return this.http.get("http://llll.com").map((r) => r.json());
     }
 
     getById(id: string | number) {
-        return datasetPromise.then(response => {
-            return response.find(dataset => dataset.id == id);
+        // return datasetPromise.then(response => {
+        //     return response.find(dataset => dataset.id == id);
+        // })
+        return this.http.get("http://llll.com").flatMap((r) => {
+            var datasets = r.json();
+            return datasets;
+        }).filter((dataset) => {
+            return dataset.id == id;
         })
     }
 
