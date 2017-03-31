@@ -6,7 +6,8 @@
         "sourceMap": true,
         "module": "commonjs",
         "experimentalDecorators": true,
-        "outDir": "out"
+        "outDir": "out",
+        "skipLibCheck":true
     },
     "exclude": [
         "_old",
