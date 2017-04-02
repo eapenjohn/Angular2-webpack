@@ -11,62 +11,60 @@ module.exports = {
         path: __dirname
     },
     resolve: {
-        root: path.join(__dirname, './app'),
-        extensions: ['', '.ts', '.js'],
-        alias: {
-            'bootstarp-css': 'bootstrap/dist/css/bootstrap.css'
-        }
-    },
-    preprocessors: {
-        '**/*.js': file => babel.transform(file.content, {
-            sourceMap: true
-        })
+        modules: [
+            "node_modules"
+        ],
+        extensions: ['.ts', '.js', '.json'],
+        //  alias: alias
+
     },
     devtool: 'inline-source-map',
 
     module: {
-        loaders: [{
-                test: /\.css$/,
-                loader: 'style!css!'
-            }, {
-                test: /\.ts(x?)$/,
-                loader: 'ts'
-            }, {
-                test: /\.html$/,
-                exclude: /node_modules/,
-                loader: 'raw'
-            }, {
-
-                test: /\.js$/,
-                loader: 'babel',
-                exclude: /node_modules/,
-                include: [
-                    path.join(__dirname, "./app"),
-                ]
-            }, {
-                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'file'
-            }, {
-                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'file'
-            }, {
-                test: /\.jpg$/,
-                exclude: /node_modules/,
-                loader: 'file'
-            }, {
-                test: /\.gif$/,
-                exclude: /node_modules/,
-                loader: 'file'
-            }, {
-                test: /\.png$/,
-                exclude: /node_modules/,
-                loader: 'file'
-            }
-
+        rules: [{
+            test: /\.(sass|scss|css)$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader',
+            ]
+        },
+        {
+            test: /\.ts(x?)$/,
+            use: 'ts-loader'
+        },
+        {
+            test: /\.(js|jsx)$/,
+            use: 'babel-loader'
+        }, {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            use: 'raw-loader'
+        },
+        {
+            test: /\.json$/,
+            use: 'json-loader'
+        },
+        {
+            test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            use: 'file-loader'
+        }, {
+            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            use: 'file-loader'
+        }, {
+            test: /\.jpg$/,
+            exclude: /node_modules/,
+            use: 'file-loader'
+        }, {
+            test: /\.gif$/,
+            exclude: /node_modules/,
+            use: 'file-loader'
+        }, {
+            test: /\.png$/,
+            exclude: /node_modules/,
+            use: 'file-loader'
+        }
         ]
-    },
-    resolveLoader: {
-        modulesDirectories: ["node_modules"]
     },
     plugins: [
         new HtmlWebpackPlugin({
