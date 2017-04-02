@@ -3,6 +3,8 @@ import {
   Input
 } from '@angular/core'
 
+//import './table.scss'
+
 import {
   DatasetService
 } from '../service/dataset.service'

@@ -6,6 +6,11 @@ import {
     HttpModule
 } from '@angular/http'
 
+
+import { FlexLayoutModule } from '@angular/flex-layout'
+
+import { MaterialModule } from '@angular/material'
+
 import {
     RouterModule
 } from '@angular/router'
@@ -60,7 +65,7 @@ import {
 
 @NgModule({
     // array of modules needed for this modules
-    imports: [BrowserModule, routing, RouterModule, FormsModule, HttpModule, ReactiveFormsModule],
+    imports: [BrowserModule, routing, RouterModule, FormsModule, HttpModule, ReactiveFormsModule, FlexLayoutModule, MaterialModule],
     //components and directives part of this module
     declarations: [DatasetHomeComponent, ListsComponent, DatasetViewComponent, DatasetEditComponent, NewDatasetComponent, SearchPipe],
     //root component of the app

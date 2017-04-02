@@ -2,7 +2,7 @@ import {
     Component
 } from "@angular/core"
 
-import 'bootstarp-css'
+// import 'bootstarp-css'
 
 @Component({
     selector: 'app',

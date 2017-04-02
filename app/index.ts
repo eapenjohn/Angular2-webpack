@@ -1,3 +1,6 @@
+import '@angular/material/core/theming/prebuilt/indigo-pink.css';
+import 'hammerjs';
+
 import {
     platformBrowserDynamic
 } from '@angular/platform-browser-dynamic'
@@ -7,3 +10,4 @@ import {
 } from './modules/home/home.module'
 
 platformBrowserDynamic().bootstrapModule(HomeModule);
+

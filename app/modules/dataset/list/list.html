@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
   <div class="col-md-12">
 
     <div class="panel panel-default panel-primary">
@@ -31,6 +31,53 @@
         </tbody>
       </table>
 
+
+
     </div>
   </div>
-</div>
+</div>-->
+
+<md-card>
+
+  <md-card-title>Datasets</md-card-title>
+  <div fxFlexFill fxLayout="column" layout>
+    <div fxLayout="row">
+      <div fxLayout="row" fxFlex="20">
+        #
+      </div>
+      <div fxLayout="row" fxFlex="20">
+        Name
+      </div>
+      <div fxLayout="row" fxFlex="20">
+        Description
+      </div>
+      <div fxLayout="row" fxFlex="20">
+        Supplier Name
+      </div>
+    </div>
+    <div fxLayout='row' *ngFor="let dataset of datasets | datasetsearch:searchValue">
+      <div fxFlex="20">
+        {{dataset.id}}
+      </div>
+      <div fxFlex="20">
+        {{dataset.name}}
+      </div>
+      <div fxFlex="20">
+        {{dataset.description}}
+      </div>
+      <div fxFlex="20">
+        {{dataset.supplierName}}
+      </div>
+
+    </div>
+  </div>
+</md-card>
+
+
+
+<!--<md-card>
+  <md-checkbox>Unchecked</md-checkbox>
+  <md-checkbox [checked]="true">Checked</md-checkbox>
+  <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+  <md-checkbox [disabled]="true">Disabled</md-checkbox>
+</md-card>-->

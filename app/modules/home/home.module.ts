@@ -1,3 +1,5 @@
+import '@angular/flex-layout/bundles/flex-layout.umd.js'
+
 import {
     NgModule
 } from '@angular/core'
@@ -14,10 +16,18 @@ import {
 } from '@angular/platform-browser'
 
 import {
+    BrowserAnimationsModule
+} from '@angular/platform-browser/animations'
+
+import { FlexLayoutModule} from '@angular/flex-layout'
+
+import {
     LocationStrategy,
     HashLocationStrategy,
     PathLocationStrategy
 } from '@angular/common'
+
+import { MaterialModule} from '@angular/material'
 
 import {
     HomeComponent
@@ -44,7 +54,7 @@ from './advertise/advertise.component'
 
 
 @NgModule({
-    imports: [BrowserModule, routing, RouterModule, HttpModule, DatasetModule],
+    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule, DatasetModule,FlexLayoutModule],
     declarations: [HomeComponent, AdvertiseComponent, RootComponent],
     bootstrap: [HomeComponent],
     providers: [{
