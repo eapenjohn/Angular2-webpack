@@ -1,27 +1,33 @@
-<form name="LoginForm" *ngIf="dataset" class="form-horizontal">
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Datset Name:</label>
-        <div class="col-sm-5">
-            {{dataset.name}}
-        </div>
+<md-card>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <form name="LoginForm" *ngIf="dataset">
+            <div fxLayout="row">
+                <div fxFlex="40">
+                    Datset Name:
+                </div>
+                <div fxFlex="40">
+                    {{dataset.name}}
+                </div>
+            </div>
+            <div fxLayout="row">
+                <div fxFlex="40">
+                    Datset Description
+                </div>
+                <div fxFlex="40">
+                    {{dataset.description}}
+                </div>
+            </div>
+            <div fxLayout="row">
+                <div fxFlex="40">
+                    SupplireName
+                </div>
+                <div fxFlex="40">
+                    {{dataset.supplierName}}
+                </div>
+            </div>
+            <button md-button (click)="goBack()">Go back</button>
+            <button md-button routerLink='/home'>Home</button>
+            <button md-button [routerLink]="['/dataset/edit',dataset.id]">Edit</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Datset Description:</label>
-        <div class="col-sm-5">
-            {{dataset.description}}
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">SupplireName:</label>
-        <div class="col-sm-5">
-            {{dataset.supplierName}}
-        </div>
-    </div>
-    <div class="form-buttons">
-        <div class="col-sm-offset-2 col-sm-10">
-            <a class='btn btn-default' (click)="goBack()">Go back</a>
-            <a class='btn btn-default' routerLink='/home'>Home</a>
-            <a class='btn btn-default' [routerLink]="['/dataset/edit',dataset.id]">Edit</a>
-        </div>
-    </div>
-</form>
+</md-card>

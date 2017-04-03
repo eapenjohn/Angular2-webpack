@@ -1,68 +1,29 @@
-<!--<div class="row">
-  <div class="col-md-12">
-
-    <div class="panel panel-default panel-primary">
-      <div class="panel-heading">Datasets
-        <div class="pull-right"><input type="text" style="color:black" [(ngModel)]='searchValue' /></div>
-      </div>
-      <table class="table">
-        <thead>
-          <th>
-            #
-          </th>
-          <th>
-            Name
-          </th>
-          <th>
-            Description
-          </th>
-          <th>
-            Supplier Name
-          </th>
-        </thead>
-        <tbody>
-          <tr *ngFor='let dataset of datasets | datasetsearch:searchValue'>
-            <td>{{dataset.id}}</td>
-            <td><a (click)='navigateToView(dataset)'>{{dataset.name}}</a></td>
-            <td>{{dataset.description}}</td>
-            <td> <a (click)='displayDeatils()'> {{dataset.supplierName}} </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-    </div>
-  </div>
-</div>-->
 
 <md-card>
-
   <md-card-title>Datasets</md-card-title>
-  <div fxFlexFill fxLayout="column" layout>
-    <div fxLayout="row">
+  <div class='table'  fxFlexFill fxLayout="column" layout>
+    <div class="head" fxLayout="row">
       <div fxLayout="row" fxFlex="20">
         #
       </div>
-      <div fxLayout="row" fxFlex="20">
+      <div fxLayout="row" fxFlex="30">
         Name
       </div>
-      <div fxLayout="row" fxFlex="20">
+      <div fxLayout="row" fxFlex="30">
         Description
       </div>
       <div fxLayout="row" fxFlex="20">
         Supplier Name
       </div>
     </div>
-    <div fxLayout='row' *ngFor="let dataset of datasets | datasetsearch:searchValue">
+    <div (click)='navigateToView(dataset)' class="items" fxLayout='row' *ngFor="let dataset of datasets | datasetsearch:searchValue">
       <div fxFlex="20">
-        {{dataset.id}}
+     <a (click)='navigateToView(dataset)' >   {{dataset.id}}</a>
       </div>
-      <div fxFlex="20">
+      <div fxFlex="30">
         {{dataset.name}}
       </div>
-      <div fxFlex="20">
+      <div fxFlex="30">
         {{dataset.description}}
       </div>
       <div fxFlex="20">
@@ -72,12 +33,3 @@
     </div>
   </div>
 </md-card>
-
-
-
-<!--<md-card>
-  <md-checkbox>Unchecked</md-checkbox>
-  <md-checkbox [checked]="true">Checked</md-checkbox>
-  <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
-  <md-checkbox [disabled]="true">Disabled</md-checkbox>
-</md-card>-->
