@@ -1,71 +1,28 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" [routerLink]='["home"]'>DMS</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href='' [routerLink]='["dataset/add/new"]'>Create Dataset</a>
-                </li>
-                <li>
-                    <a href='' [routerLink]='["/legacy"]'>Datasets</a>
-                </li>
-                <li>
-                    <a href='' (click)='isplayDeatils()'>Advertisement</a>
-                </li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</nav>
-<md-toolbar>ssssss</md-toolbar>
-<md-sidenav></md-sidenav>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
 
-            <div class="container ">
-                <div class="row ">
-                    <div class="col-lg-1 col-md-3"></div>
-                    <div class="col-lg-10 col-md-6">
-                        <!--<h1>Dataset Management Systems</h1>-->
-                        <router-outlet></router-outlet>
-                    </div>
-                    <div class="col-lg-1 col-md-3">
-                        <router-outlet name='details'></router-outlet>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--<md-card>
-      <md-checkbox>Unchecked</md-checkbox>
-      <md-checkbox [checked]="true">Checked</md-checkbox>
-      <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
-      <md-checkbox [disabled]="true">Disabled</md-checkbox>
-    </md-card>
 
-    <div fxFlexFill fxLayout="column">
-  <div fxLayout="row">
-    <div fxLayout="row" fxFlex="20">
-      #
+<md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button> Angular Material2 Example App
+</md-toolbar>
+
+
+<md-sidenav-container>
+    <md-sidenav mode="side" #sidenav opened="true">
+        <md-list>
+            <md-list-item>
+                sdfhsdk
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <div class="my-content">
+
+        Main sdsdcontent
+          <md-list>
+            <md-list-item>
+                sdfhsdk
+            </md-list-item>
+        </md-list>
+        <router-outlet></router-outlet>
     </div>
-     <div  fxLayout="row" fxFlex="20">
-      #
-    </div>
-     <div fxLayout="row" fxFlex="20">
-      #
-    </div>
-     <div fxLayout="row" fxFlex="20">
-      #
-    </div>
-  </div>
-</div>-->
+</md-sidenav-container>

@@ -14,11 +14,11 @@ module.exports = {
         modules: [
             "node_modules"
         ],
-        extensions: ['.ts', '.js', '.json'],
+      extensions: ['.ts', '.es6', '.js', '.json']
         //  alias: alias
 
     },
-    devtool: 'inline-source-map',
+   // devtool: 'source-map',
 
     module: {
         rules: [{
@@ -31,7 +31,11 @@ module.exports = {
         },
         {
             test: /\.ts(x?)$/,
-            use: 'ts-loader'
+            loader: 'ts-loader',
+             exclude: /node_modules/,
+            options: {
+                transpileOnly: true
+            }
         },
         {
             test: /\.(js|jsx)$/,
