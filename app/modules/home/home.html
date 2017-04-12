@@ -1,24 +1,28 @@
-
-
-<md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button> Angular Material2 Example App
-</md-toolbar>
-
-
 <md-sidenav-container>
-    <md-sidenav mode="side" #sidenav opened="true">
+    <md-sidenav mode="over" #sidenav opened="false">
         <md-list>
             <md-list-item>
-                sdfhsdk
+                <md-icon svgIcon="svg-1"></md-icon>
+            </md-list-item>
+
+            <md-list-item>
+                <md-icon svgIcon="svg-2"></md-icon>
             </md-list-item>
         </md-list>
     </md-sidenav>
+    <md-toolbar color="warn">
+        <div fxFlex fxLayout="row">
+            <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+            <div fxLayoutFill fxFlex fxLayoutAlign="end center">Angular Material2 Example App</div>
+        </div>
+    </md-toolbar>
+
     <div class="my-content">
 
-        Main sdsdcontent
-          <md-list>
+        Main content
+        <md-list>
             <md-list-item>
                 sdfhsdk
             </md-list-item>

@@ -1,3 +1,5 @@
+import './home.scss'
+
 import {
     Component
 } from '@angular/core'
