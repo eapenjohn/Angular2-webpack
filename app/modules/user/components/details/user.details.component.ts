@@ -2,10 +2,10 @@ import { Component } from '@angular/core'
 
 @Component({
     selector: 'user-deatils',
-    template: require('./user.deatils.html')
+    template: require('./user.details.html')
 })
 
-export class UserDetails
+export default class UserDetails
 {
 
 }

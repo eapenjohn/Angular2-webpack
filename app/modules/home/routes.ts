@@ -8,18 +8,24 @@ import {
 } from './home.component'
 
 import components
-from './components'
+    from './components'
 
+import UserDetails from '../user/components'
 
 
 const routes: Routes = [{
     path: '',
     component: components.RootComponent
 }, {
-    path: 'home',
+    path: 'users',
     children: [{
         path: '',
-        component: components.RootComponent,
+        children: [
+            {
+                path: ':id',
+                component: UserDetails
+            }
+        ]
     }]
 }, {
     path: 'details-items',

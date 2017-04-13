@@ -37,6 +37,8 @@ from './home.component'
 import components
 from './components'
 
+import UserModule from '../user'
+
 import {
     routing
 } from './routes'
@@ -48,7 +50,7 @@ import {
 
 
 @NgModule({
-    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule, DatasetModule,FlexLayoutModule],
+    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule, DatasetModule,FlexLayoutModule,UserModule],
     declarations: [HomeComponent, components.AdvertiseComponent, components.RootComponent],
     bootstrap: [HomeComponent],
     providers: [{

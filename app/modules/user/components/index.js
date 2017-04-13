@@ -1,3 +1,3 @@
-import { UserDetails } from './details'
+import  UserDetails from './details'
 
-module.exports = { UserDetails }
+export default  UserDetails 

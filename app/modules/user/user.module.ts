@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
-import * as components from './components'
+import UserDetails from './components'
 
 @NgModule({
-    declarations: [components.UserDetails]
+    declarations: [UserDetails]
 })
 
-export class UserModule {
+export default class UserModule {
 
 }
