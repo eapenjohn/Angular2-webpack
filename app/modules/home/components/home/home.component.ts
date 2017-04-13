@@ -16,7 +16,7 @@ import { DomSanitizer } from "@angular/platform-browser"
     selector: 'home',
     template: require('./home.html'),
 })
-export class HomeComponent {
+export default class HomeComponent {
     constructor(private router, private mdIconRegistry: MdIconRegistry, private domSanitizer: DomSanitizer) {
         mdIconRegistry.addSvgIcon("share", domSanitizer.bypassSecurityTrustResourceUrl("https://rawgit.com/angular/material-start/es5-tutorial/app/assets/svg/share.svg"));
         mdIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl("https://rawgit.com/angular/material-start/es5-tutorial/app/assets/svg/avatars.svg"))

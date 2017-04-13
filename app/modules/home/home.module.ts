@@ -29,11 +29,6 @@ import {
 
 import { MaterialModule} from '@angular/material'
 
-import {
-    HomeComponent
-}
-from './home.component'
-
 import components
 from './components'
 
@@ -51,8 +46,8 @@ import {
 
 @NgModule({
     imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule, DatasetModule,FlexLayoutModule,UserModule],
-    declarations: [HomeComponent, components.AdvertiseComponent, components.RootComponent],
-    bootstrap: [HomeComponent],
+    declarations: [ components.HomeComponent, components.AdvertiseComponent, components.RootComponent],
+    bootstrap: [ components.HomeComponent],
     providers: [{
         provide: LocationStrategy,
         useClass: HashLocationStrategy
