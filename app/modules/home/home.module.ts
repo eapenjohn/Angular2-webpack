@@ -34,10 +34,8 @@ import {
 }
 from './home.component'
 
-import {
-    RootComponent
-}
-from './root/root.component'
+import components
+from './components'
 
 import {
     routing
@@ -47,15 +45,11 @@ import {
     DatasetModule
 } from '../dataset/dataset.module'
 
-import {
-    AdvertiseComponent
-}
-from './advertise/advertise.component'
 
 
 @NgModule({
     imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule, DatasetModule,FlexLayoutModule],
-    declarations: [HomeComponent, AdvertiseComponent, RootComponent],
+    declarations: [HomeComponent, components.AdvertiseComponent, components.RootComponent],
     bootstrap: [HomeComponent],
     providers: [{
         provide: LocationStrategy,

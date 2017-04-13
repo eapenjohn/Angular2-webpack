@@ -1,1 +1,0 @@
-import './advertise.component'

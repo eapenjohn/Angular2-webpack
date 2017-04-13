@@ -7,30 +7,23 @@ import {
     HomeComponent
 } from './home.component'
 
-import {
-    AdvertiseComponent
-}
-from './advertise/advertise.component'
+import components
+from './components'
 
-
-import {
-    RootComponent
-}
-from './root/root.component'
 
 
 const routes: Routes = [{
     path: '',
-    component: RootComponent
+    component: components.RootComponent
 }, {
     path: 'home',
     children: [{
         path: '',
-        component: RootComponent,
+        component: components.RootComponent,
     }]
 }, {
     path: 'details-items',
-    component: AdvertiseComponent,
+    component: components.AdvertiseComponent,
     outlet: 'details'
 }]
 
