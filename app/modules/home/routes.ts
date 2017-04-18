@@ -3,14 +3,10 @@ import {
     RouterModule
 } from '@angular/router'
 
-import {
-    HomeComponent
-} from './home.component'
-
 import components
     from './components'
 
-import UserDetails from '../user/components'
+import  * as user from '../user/components'
 
 
 const routes: Routes = [{
@@ -20,10 +16,11 @@ const routes: Routes = [{
     path: 'users',
     children: [{
         path: '',
+        component: user.UsersListComponent,
         children: [
             {
                 path: ':id',
-                component: UserDetails
+                component: user.UserDetails
             }
         ]
     }]

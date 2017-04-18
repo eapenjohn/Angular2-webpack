@@ -38,14 +38,10 @@ import {
     routing
 } from './routes'
 
-import {
-    DatasetModule
-} from '../dataset/dataset.module'
-
 
 
 @NgModule({
-    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule, DatasetModule,FlexLayoutModule,UserModule],
+    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule,FlexLayoutModule,UserModule],
     declarations: [ components.HomeComponent, components.AdvertiseComponent, components.RootComponent],
     bootstrap: [ components.HomeComponent],
     providers: [{
