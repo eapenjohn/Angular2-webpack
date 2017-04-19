@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router'
 
-import  * as user from '../user/components'
-import  {RootComponent, HomeComponent , AdvertiseComponent} from '../home/components'
+import  {UsersListComponent, UserDetails} from '../user/components'
+import  {RootComponent, HomeComponent , AdvertiseComponent, PageNotFoundComponent} from '../home/components'
 
 let routes: Routes = [{
     path: '',
@@ -10,11 +10,11 @@ let routes: Routes = [{
     path: 'users',
     children: [{
         path: '',
-        component: user.UsersListComponent,
+        component: UsersListComponent,
         children: [
             {
                 path: ':id',
-                component: user.UserDetails
+                component: UserDetails
             }
         ]
     }]
@@ -22,6 +22,9 @@ let routes: Routes = [{
     path: 'details-items',
     component: AdvertiseComponent,
     outlet: 'details'
+},{
+    path:'**',
+    component:PageNotFoundComponent
 }]
 
 

@@ -1,1 +1,2 @@
-export * from './usersList.component'
+import UsersListComponent from './usersList.component'
+export default UsersListComponent

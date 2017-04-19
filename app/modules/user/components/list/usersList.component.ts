@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 
 @Component({
     selector:'users-list',
-    template:'ggg'
+    template:'User lists'
 })
 
 export default class UsersListComponent

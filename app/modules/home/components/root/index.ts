@@ -1,3 +1,3 @@
-export * from './root.component'
+import RootComponent from './root.component'
 
-// export default RootComponent;
+ export default RootComponent;
