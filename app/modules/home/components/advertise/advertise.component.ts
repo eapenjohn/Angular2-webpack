@@ -7,6 +7,6 @@ import {
     selector: 'advsertise',
     template: 'Add component'
 })
-export class AdvertiseComponent {
+export default class AdvertiseComponent {
 
 }

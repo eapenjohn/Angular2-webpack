@@ -29,27 +29,27 @@ import {
 
 import { MaterialModule} from '@angular/material'
 
-import components
+import {HomeComponent, AdvertiseComponent, RootComponent}
 from './components'
 
 import UserModule from '../user'
 
-import {
-    routing
-} from './routes'
+// import {
+//     routing
+// } from './routes'
 
 
 
 @NgModule({
-    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, routing, RouterModule, HttpModule,FlexLayoutModule,UserModule],
-    declarations: [ components.HomeComponent, components.AdvertiseComponent, components.RootComponent],
-    bootstrap: [ components.HomeComponent],
+    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, RouterModule, HttpModule,FlexLayoutModule,UserModule],
+    declarations: [ HomeComponent, AdvertiseComponent, RootComponent],
+   // bootstrap: [ components.HomeComponent],
     providers: [{
         provide: LocationStrategy,
         useClass: HashLocationStrategy
     }]
 })
 
-export class HomeModule {
+export default  class HomeModule {
 
 }

@@ -1,3 +1,3 @@
-import {AdvertiseComponent} from './advertise.component'
+import AdvertiseComponent from './advertise.component'
 
 export default AdvertiseComponent;

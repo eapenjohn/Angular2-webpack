@@ -7,6 +7,6 @@ import {
     selector: 'home',
     template: require('./root.html'),
 })
-export class RootComponent {
+export default class RootComponent {
 
 }
