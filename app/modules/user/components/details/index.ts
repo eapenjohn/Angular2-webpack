@@ -1,3 +1,1 @@
-import  UserDetails from './user.details.component'
-
-export default UserDetails
+export  * from './user.details.component'
