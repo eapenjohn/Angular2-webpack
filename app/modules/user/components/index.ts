@@ -1,8 +1,8 @@
-import  UserDetails from './details'
+import  UserDetailsComponent from './details'
 import  UsersListComponent from './list'
 
 
 export {
-    UserDetails,
+    UserDetailsComponent,
     UsersListComponent
 }

@@ -1,11 +1,22 @@
-import { Routes} from '@angular/router'
+import { Routes } from '@angular/router'
 
-import {UsersListComponent} from './components'
+import { UsersListComponent, UserDetailsComponent } from './components'
 
-let routes :Routes =[
+let routes: Routes = [
     {
-        path:'',
-        component:UsersListComponent
+        path: 'users',
+        component: UsersListComponent,
+        children: [
+            {
+                path: '',
+                children: [
+                    {
+                        path: ':id',
+                        component: UserDetailsComponent
+                    }
+                ]
+            }
+        ]
     }
 ]
 

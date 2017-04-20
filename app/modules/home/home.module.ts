@@ -32,8 +32,6 @@ import { MaterialModule} from '@angular/material'
 import {HomeComponent, AdvertiseComponent, RootComponent, PageNotFoundComponent}
 from './components'
 
-import UserModule from '../user'
-
 // import {
 //     routing
 // } from './routes'
@@ -42,13 +40,13 @@ import UserModule from '../user'
 
 
 @NgModule({
-    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, RouterModule, HttpModule,FlexLayoutModule,UserModule],
+    imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, RouterModule, HttpModule,FlexLayoutModule],
     declarations: [ HomeComponent, AdvertiseComponent, RootComponent,PageNotFoundComponent],
    // bootstrap: [ components.HomeComponent],
-    providers: [{
-        provide: LocationStrategy,
-        useClass: PathLocationStrategy
-    }]
+    // providers: [{
+    //     provide: LocationStrategy,
+    //     useClass: HashLocationStrategy
+    // }]
 })
 
 export default  class HomeModule {

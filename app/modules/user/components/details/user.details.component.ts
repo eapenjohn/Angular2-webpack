@@ -5,7 +5,7 @@ import { Component } from '@angular/core'
     template: require('./user.details.html')
 })
 
-export default class UserDetails
+export default class UserDetailsComponent
 {
 
 }

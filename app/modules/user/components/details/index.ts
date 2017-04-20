@@ -1,2 +1,2 @@
-import  UserDetails from './user.details.component'
-export default UserDetails
+import  UserDetailsComponent from './user.details.component'
+export default UserDetailsComponent

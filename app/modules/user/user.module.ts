@@ -3,10 +3,11 @@ import {RouterModule} from '@angular/router'
 
 import * as components from './components'
 import routes from  './user.routes'
+import {MaterialModule} from '@angular/material'
 
 
 @NgModule({
-    declarations: [components.UserDetails, components.UsersListComponent],
+    declarations: [components.UserDetailsComponent, components.UsersListComponent],
     imports:[RouterModule.forChild(routes)]
 })
 
