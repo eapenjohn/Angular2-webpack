@@ -40,14 +40,15 @@ import UserModule from '../user'
 
 
 
+
 @NgModule({
     imports: [MaterialModule.forRoot(),BrowserModule, BrowserAnimationsModule, RouterModule, HttpModule,FlexLayoutModule,UserModule],
     declarations: [ HomeComponent, AdvertiseComponent, RootComponent,PageNotFoundComponent],
    // bootstrap: [ components.HomeComponent],
-    // providers: [{
-    //     provide: LocationStrategy,
-    //     useClass: HashLocationStrategy
-    // }]
+    providers: [{
+        provide: LocationStrategy,
+        useClass: PathLocationStrategy
+    }]
 })
 
 export default  class HomeModule {
