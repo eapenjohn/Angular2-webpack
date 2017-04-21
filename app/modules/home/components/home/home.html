@@ -1,25 +1,18 @@
-<md-sidenav-container>
-    <md-sidenav mode="over" #sidenav opened="false">
-        <md-nav-list fxFlex fxLayout="column">
-            <md-list-item fxFlex>
-                <md-icon svgIcon="svg-1"></md-icon>
-                <h1>name</h1>
-                <a routerLink='/users/2'>Users 2</a>
-            </md-list-item>
-
-            <md-list-item fxFlex>
-                <md-icon svgIcon="svg-2"></md-icon>
-            </md-list-item>
-        </md-nav-list>
-    </md-sidenav>
-    <md-toolbar color="warn">
-        <div fxFlex fxLayout="row">
-            <button class="app-icon-button" (click)="sidenav.toggle()">
+<md-toolbar color="warn">
+    <div fxFlex fxLayout="row">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
-            <div fxLayoutFill fxFlex fxLayoutAlign="end center">Angular Material2 Example App</div>
-        </div>
-    </md-toolbar>
+        <div fxLayoutFill fxFlex fxLayoutAlign="end center">Angular Material2 Example App</div>
+    </div>
+</md-toolbar>
+<!--<md-sidenav-container>
+    <md-sidenav mode="over" #sidenav opened="false">
+        <md-nav-list fxFlex fxLayout="column">
+         
+        </md-nav-list>
+    </md-sidenav>
+
 
     <div class="my-content">
         <md-list>
@@ -28,4 +21,6 @@
         </md-list>
         <router-outlet></router-outlet>
     </div>
-</md-sidenav-container>
+</md-sidenav-container>-->
+
+  <router-outlet></router-outlet>
