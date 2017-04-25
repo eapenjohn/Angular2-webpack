@@ -1,9 +1,7 @@
 
-<md-list-item fxFlex>
-    <md-icon svgIcon="svg-1"></md-icon>
-    <h1> <a routerLink='/users/2'> Lewis </a></h1>
-</md-list-item>
-
-<md-list-item fxFlex>
-    <md-icon svgIcon="svg-2"></md-icon>
-</md-list-item>
+<div fxLayout="column" fxFlexOffset="10">
+     <div fxFlex *ngFor="let user of users">
+         <md-icon svgIcon="{{user.avatar}}"></md-icon>
+        <h1> <a routerLink="['/users',user.id]"> {{user.name}} </a></h1>
+    </div>
+</div>

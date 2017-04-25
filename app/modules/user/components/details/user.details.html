@@ -1,11 +1,12 @@
-<div fxLayout="column" fxFlex>
+<div fxLayout="column" fxFlex fxFlexOffset="5">
     <div fxFlex>
-         <md-icon svgIcon="svg-1"></md-icon>
+         <md-icon svgIcon="{{user.avatar}}"></md-icon>
     </div>
     <div>
-      <h1>  Lewis</h1>
+      <h1>  {{user.name}}</h1>
     </div>
     <div fxFlex>
-        Lewis Carl Davidson Hamilton,[4] MBE (born 7 January 1985) is a British Formula One racing driver from England, currently racing for the Mercedes AMG Petronas team. A three-time Formula One World Champion, he is regarded by fellow and former drivers as one of the greatest Formula One drivers in the history of the sport.[5][6][7] He won his first title with McLaren in 2008 before moving to Mercedes, where he won back-to-back titles in 2014 and 2015.
+       {{user.description}}
     </div>
 </div>
+{{user}}
