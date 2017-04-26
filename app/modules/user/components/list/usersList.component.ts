@@ -1,4 +1,7 @@
 import { Component } from '@angular/core'
+import {ActivatedRoute} from '@angular/router'
+import { Observable } from 'rxjs/Observable'
+
 import UserService from '../../services'
 
 @Component({
@@ -8,17 +11,21 @@ import UserService from '../../services'
 
 export default class UsersListComponent
 {
-    users=[];
-    constructor(public userService:UserService)
+    users :Observable<any[]>;
+    constructor(public userService:UserService, public route:ActivatedRoute)
     {
     //  console.log( userService.get());
     }
 
    ngOnInit(){
-     this.userService.get().subscribe((data)=>{
-        this.users=data
-     });
+    //   this.users= this.userService.get().switchMap((data)=>{
+    //     this.users=data
+    //  });
+
+   this.users=   this.route.params.switchMap(()=>{
+        return this.userService.get();
+    })
    }
 }
 
-UsersListComponent['parameters'] =[UserService]
+UsersListComponent['parameters'] =[UserService, ActivatedRoute]

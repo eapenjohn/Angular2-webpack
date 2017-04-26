@@ -1,4 +1,4 @@
-<div fxLayout="column" fxFlex fxFlexOffset="5">
+<div fxLayout="column" *ngIf="user" fxFlex fxFlexOffset="5">
     <div fxFlex>
          <md-icon svgIcon="{{user.avatar}}"></md-icon>
     </div>
@@ -9,4 +9,3 @@
        {{user.description}}
     </div>
 </div>
-{{user}}
