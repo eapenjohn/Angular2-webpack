@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
-import { Observable } from 'rxjs/Observable'
 
 import UserService from '../../services'
 
@@ -11,7 +10,7 @@ import UserService from '../../services'
 
 export default class UsersListComponent
 {
-    users :Observable<any[]>;
+    users :Observable<[]>;
     constructor(public userService:UserService, public route:ActivatedRoute)
     {
     //  console.log( userService.get());

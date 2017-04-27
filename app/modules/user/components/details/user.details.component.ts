@@ -1,7 +1,7 @@
 import { ActivatedRoute } from '@angular/router'
 import 'rxjs/add/operator/switchMap';
-import { Observable } from 'rxjs/Observable'
-import { Component } from '@angular/core'
+import {Observable} from 'rxjs/Observable'
+ import { Component } from '@angular/core'
 
 import './user.details.scss'
 import UserService from '../../services'
@@ -14,7 +14,7 @@ import UserService from '../../services'
 })
 
 export default class UserDetailsComponent {
-  user:any;
+  user ;
   activatedRoute: ActivatedRoute;
   userservice: UserService;
   sub;
@@ -25,12 +25,11 @@ export default class UserDetailsComponent {
 
   ngOnInit() {
     // alert(this.activatedRoute)
-    this.activatedRoute.params.switchMap((params) => {
-      // alert(params.id)
-      return this.userservice.getById(+params['id']);
+      this.activatedRoute.params.switchMap((params)=>{
+        // alert(params.id)
+      return this.userservice.getById(params.id);
       //  console.log(this.user)
-    }).subscribe((data) =>
-    { console.log(data);  this.user = data })
+       }).subscribe((data) => this.user=data)
   }
 
 }
