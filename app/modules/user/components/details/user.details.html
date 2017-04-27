@@ -1,3 +1,4 @@
+
 <div fxLayout="column" *ngIf="user" fxFlex fxFlexOffset="5">
     <div fxFlex>
          <md-icon svgIcon="{{user.avatar}}"></md-icon>
@@ -7,5 +8,9 @@
     </div>
     <div fxFlex>
        {{user.description}}
+    </div>
+
+    <div>
+      <button md-button [routerLink]="['../', {selected : user.name, selectedId: user.id}]">Go back</button>
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { Routes} from '@angular/router'
 
-import { UsersListComponent, UserDetailsComponent,RootUserComponent } from './components'
+import { UsersListComponent, UserDetailsComponent,RootUserComponent, UserRacesComponent } from './components'
 
 let routes: Routes = [
     {
@@ -18,7 +18,8 @@ let routes: Routes = [
             },
             {
                 path:'', outlet:'list', component:UsersListComponent
-            }
+            },
+            {path:'racedetails', component:UserRacesComponent, outlet:'races'}
         ]
     }
 ]
