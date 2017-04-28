@@ -1,25 +1,28 @@
-import { Routes} from '@angular/router'
+import { Routes } from '@angular/router'
 
-import { UsersListComponent, UserDetailsComponent,RootUserComponent, UserRacesComponent } from './components'
+import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesComponent } from './components'
 
 let routes: Routes = [
     {
         path: 'users',
-       component: RootUserComponent,
+        component: RootUserComponent,
         children: [
             {
                 path: '',
                 children: [
                     {
                         path: ':id',
-                        component: UserDetailsComponent
+                        component: UserDetailsComponent,
+                        children: [
+                            { path: 'racedetails', component: UserRacesComponent, outlet: 'races' }
+                        ]
                     }
                 ]
             },
             {
-                path:'', outlet:'list', component:UsersListComponent
+                path: '', outlet: 'list', component: UsersListComponent
             },
-            {path:'racedetails', component:UserRacesComponent, outlet:'races'}
+
         ]
     }
 ]

@@ -1,16 +1,19 @@
-
 <div fxLayout="column" *ngIf="user" fxFlex fxFlexOffset="5">
-    <div fxFlex>
-         <md-icon svgIcon="{{user.avatar}}"></md-icon>
-    </div>
-    <div>
-      <h1>  {{user.name}}</h1>
-    </div>
-    <div fxFlex>
-       {{user.description}}
-    </div>
+  <div fxFlex>
+    <md-icon svgIcon="{{user.avatar}}"></md-icon>
+  </div>
+  <div>
+    <h1> {{user.name}}</h1>
+  </div>
+  <div fxFlex>
+    {{user.description}}
+  </div>
 
-    <div>
-      <button md-button [routerLink]="['../', {selected : user.name, selectedId: user.id}]">Go back</button>
-    </div>
+  <div>
+    <button md-button [routerLink]="['../', {selected : user.name, selectedId: user.id}]">Go back</button>
+  </div>
+  <div>
+    <router-outlet name="races"></router-outlet>
+    <button md-button [routerLink]="[{outlets:{ races : ['racedetails'] } }]">Show Races</button>
+  </div>
 </div>
