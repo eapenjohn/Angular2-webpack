@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 
 import UserService from '../../services'
-
+import './userList.scss'
 @Component({
     selector:'users-list',
     template: require('./userList.html')
