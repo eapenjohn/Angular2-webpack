@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router'
 
-import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesComponent } from './components'
+import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesComponent, EditComponent } from './components'
 
 let routes: Routes = [
     {
@@ -12,9 +12,16 @@ let routes: Routes = [
                 children: [
                     {
                         path: ':id',
-                        component: UserDetailsComponent,
                         children: [
-                            { path: 'racedetails', component: UserRacesComponent, outlet: 'races' }
+
+                            {
+                                path: '', component: UserDetailsComponent, children: [
+                                   
+                                ]
+                            },
+ //not working
+                                    { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
+                            { path: 'edit', component: EditComponent }
                         ]
                     }
                 ]
@@ -28,3 +35,4 @@ let routes: Routes = [
 ]
 
 export default routes
+

@@ -11,7 +11,7 @@ import UserService from './services'
 
 
 @NgModule({
-    declarations: [components.UserDetailsComponent, components.UsersListComponent,components.RootUserComponent, components.UserRacesComponent],
+    declarations: [components.UserDetailsComponent, components.UsersListComponent,components.RootUserComponent, components.UserRacesComponent, components.EditComponent],
     imports:[RouterModule.forChild(routes),MaterialModule.forRoot(),BrowserModule, FlexLayoutModule],
     //bootstrap:[components.RootUserComponent]
     providers:[UserService]

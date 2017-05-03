@@ -13,7 +13,11 @@
     <button md-button [routerLink]="['../', {selected : user.name, selectedId: user.id}]">Go back</button>
   </div>
   <div>
-    <router-outlet name="races"></router-outlet>
     <button md-button [routerLink]="[{outlets:{ races : ['racedetails'] } }]">Show Races</button>
   </div>
+  <div>
+    <router-outlet name="races"></router-outlet>
+  </div>
 </div>
+
+<button md-button [routerLink]="['./edit']" >Edit</button>
