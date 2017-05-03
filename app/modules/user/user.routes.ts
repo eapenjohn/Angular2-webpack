@@ -2,6 +2,8 @@ import { Routes } from '@angular/router'
 
 import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesComponent, EditComponent } from './components'
 
+import {LoginGuard} from '../login/guards'
+
 let routes: Routes = [
     {
         path: 'users',
@@ -21,7 +23,7 @@ let routes: Routes = [
                             },
  //not working
                                     { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
-                            { path: 'edit', component: EditComponent }
+                            { path: 'edit', component: EditComponent, canActivate: [LoginGuard] }
                         ]
                     }
                 ]
