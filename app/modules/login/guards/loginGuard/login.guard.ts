@@ -1,17 +1,22 @@
-import { CanActivate } from '@angular/router'
+import { CanActivate, RouterStateSnapshot,ActivatedRouteSnapshot } from '@angular/router'
 
-import {LoginService} from '../../services'
+import { LoginService } from '../../services'
 
 export default class LoginGuard implements CanActivate {
 
-    _loginService:LoginService;
-
+    _loginService: LoginService;
+     _url;
     constructor(loginService: LoginService) {
-this._loginService=loginService;
+        this._loginService = loginService;
     }
-    canActivate() {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         console.log(this._loginService.loggedIn)
         console.log('login guard called');
+        this._url=state.url;
+    //    if(! this._loginService.loggedIn)
+    //    {
+    //       return false;;
+    //    }
         return true;
     }
 }
