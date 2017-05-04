@@ -1,12 +1,12 @@
-import {NgModule} from '@angular/core'
+import { NgModule } from '@angular/core'
 
-import {LoginGuard} from './guards'
+import { LoginGuard } from './guards'
+import { LoginService } from './services'
 
 @NgModule({
-    providers:[LoginGuard]
+    providers: [LoginService,LoginGuard]
 })
 
-export default class LoginModule
-{
-    
+export default class LoginModule {
+
 }
