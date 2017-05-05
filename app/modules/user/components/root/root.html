@@ -1,11 +1,10 @@
-<md-sidenav-container>
-    <md-sidenav mode="side" #sidenav opened="true">
-        <router-outlet name='list'></router-outlet>
-    </md-sidenav>
-    <div class="my-content">
-        <router-outlet></router-outlet>
-
-
+<div fxlayout="row">
+    <div fxFlex="20" fxlayout="row">
+        <md-sidenav mode="side" #sidenav opened="true">
+            <router-outlet name='list'></router-outlet>
+        </md-sidenav>
     </div>
-</md-sidenav-container>
-
+    <div fxlayout="row">
+        <router-outlet></router-outlet>
+    </div>
+</div>

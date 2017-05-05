@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 
+import { LoginService } from '../../services'
+
 @Component(
     {
         selector: 'login-component',
@@ -8,5 +10,20 @@ import { Component } from '@angular/core'
 
     export default class LoginComponent
     {
+        userId;
+        password;
+        constructor(loginService :LoginService)
+        {
+
+        }
+    
+
+     login(userId,parameters)
+     {
+         alert(userId)
+     }
+        
    
     }
+
+    LoginComponent.parameters=[LoginService]
