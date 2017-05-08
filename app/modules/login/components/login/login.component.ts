@@ -5,25 +5,22 @@ import { LoginService } from '../../services'
 @Component(
     {
         selector: 'login-component',
-        template:require('./login.html')
+        template: require('./login.html')
     })
 
-    export default class LoginComponent
-    {
-        userId;
-        password;
-        constructor(loginService :LoginService)
-        {
-
-        }
-    
-
-     login(userId,parameters)
-     {
-         alert(userId)
-     }
-        
-   
+export default class LoginComponent {
+    userId;
+    password;
+    constructor(loginService: LoginService) {
+     this.userId='';
     }
 
-    LoginComponent.parameters=[LoginService]
+
+    login(userId, parameters) {
+        alert(userId)
+    }
+
+
+}
+
+LoginComponent.parameters = [LoginService]

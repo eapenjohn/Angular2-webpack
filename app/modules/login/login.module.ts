@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { BrowserModule } from '@angular/platform-browser'
 
-import {  } from '@angular/forms'
+import { FormsModule } from '@angular/forms'
 
 import '@angular/flex-layout/bundles/flex-layout.umd.js'
 
@@ -17,7 +17,7 @@ import routes from './login.route'
 
 @NgModule({
     providers: [LoginService, LoginGuard],
-    imports: [RouterModule.forChild(routes), BrowserModule, MaterialModule, FlexLayoutModule],
+    imports: [RouterModule.forChild(routes), BrowserModule, FormsModule, MaterialModule, FlexLayoutModule],
     declarations: [LoginComponent]
 })
 

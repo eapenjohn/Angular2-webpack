@@ -1,21 +1,26 @@
 <div fxLayout="column" fxFlexFill>
     <div fxLayoutAlign="center center" fxFlexFill>
-      
+
         <md-card>
             <md-card-header>
                 <md-card-title>Login</md-card-title>
             </md-card-header>
             <md-card-content>
-                <input type="text" #userId placeholder="user id"  />
-                           <input type="password" #password placeholder="password"  />
+                <form name="loginForm" #loginForm='ngForm'>
+                    <md-input-container>
+                        <input mdInput required type="text" name='userId'  [(ngModel)]='userId' placeholder="user id" />
+                    <md-error>This field is required</md-error>
+                    </md-input-container>
+                    <md-input-container>
+                        <input mdInput required type="password" #password placeholder="password" />
+                    </md-input-container>
+                    <!--<div>{{userId.errors?.required}}</div>-->
+                </form>
             </md-card-content>
-            <md-card-actions align="start|end">
-                <button md-button (click)="login(userId,password)">Action1</button>
-                <button md-button (click)="onAction2">Action2</button>
+            <md-card-actions fxalign="start end">
+                <!--{{loginForm.userId}}-->
+                <button md-button (click)="login(userId.value,password.value)">Action1</button>
             </md-card-actions>
-            <!--<md-card-footer>
-                Footer
-            </md-card-footer>-->
         </md-card>
     </div>
 </div>
