@@ -8,18 +8,17 @@
             <md-card-content>
                 <form name="loginForm" #loginForm='ngForm'>
                     <md-input-container>
-                        <input mdInput required type="text" name='userId'  [(ngModel)]='userId' placeholder="user id" />
-                    <md-error>This field is required</md-error>
+                        <input mdInput required type="text" name='userId' #userIdField='ngModel' ngModel placeholder="user id" />
+                    <md-error *ngIf='userIdField.errors?.required'>This field is required</md-error>
                     </md-input-container>
                     <md-input-container>
-                        <input mdInput required type="password" #password placeholder="password" />
+                        <input mdInput required type="password" name="password" ngModel #passwordRef="ngModel" placeholder="password" />
+                        <md-error *ngIf="passwordRef.errors?.required">This field is required</md-error>
                     </md-input-container>
-                    <!--<div>{{userId.errors?.required}}</div>-->
                 </form>
             </md-card-content>
             <md-card-actions fxalign="start end">
-                <!--{{loginForm.userId}}-->
-                <button md-button (click)="login(userId.value,password.value)">Action1</button>
+                <button md-button (click)="login(loginForm.value)">Login</button>
             </md-card-actions>
         </md-card>
     </div>

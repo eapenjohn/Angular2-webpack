@@ -16,8 +16,8 @@ export default class LoginComponent {
     }
 
 
-    login(userId, parameters) {
-        alert(userId)
+    login(formRef) {
+        alert(formRef.userId)
     }
 
 
