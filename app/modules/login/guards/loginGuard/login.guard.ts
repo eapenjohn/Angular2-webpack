@@ -13,8 +13,6 @@ export default class LoginGuard implements CanActivate {
         this._route= route;
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        console.log(this._loginService.loggedIn)
-        console.log('login guard called');
         this._url = state.url;
         if (!this._loginService.loggedIn) {
             this._loginService.redirectUrl= state.url;

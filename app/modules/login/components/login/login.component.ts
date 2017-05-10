@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 
 import { LoginService } from '../../services'
 
@@ -11,16 +12,20 @@ import { LoginService } from '../../services'
 export default class LoginComponent {
     userId;
     password;
-    constructor(loginService: LoginService) {
+    constructor(private loginService: LoginService, private route: Router) {
      this.userId='';
     }
 
 
     login(formRef) {
-        alert(formRef.userId)
+      this.loginService.login().subscribe(()=>{
+      console.log(this.loginService.redirectUrl)
+          
+         this.route.navigate([this.loginService.redirectUrl])
+      })
     }
 
 
 }
 
-LoginComponent.parameters = [LoginService]
+LoginComponent.parameters = [LoginService,Router]

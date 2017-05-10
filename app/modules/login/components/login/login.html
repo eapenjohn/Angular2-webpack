@@ -18,7 +18,7 @@
                 </form>
             </md-card-content>
             <md-card-actions fxalign="start end">
-                <button md-button (click)="login(loginForm.value)">Login</button>
+                <button md-button [disabled]='loginForm.invalid' (click)="login(loginForm.value)">Login</button>
             </md-card-actions>
         </md-card>
     </div>
