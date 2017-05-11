@@ -1,1 +1,16 @@
-edit 
+<div fxLayout="column" fxFlexFill >
+    <div fxLayoutAlign="center center" fxFlexFill>
+        <form>
+            <md-input-container>
+                <input type="text" mdInput name="username" ngModel #usernameRef='ngModel' required placeholder="Rcer name" />
+                <md-error *ngIf='usernameRef.errors?.required'></md-error>
+            </md-input-container>
+            <md-input-container>
+                <textarea mdInput placeholder="description"></textarea>
+            </md-input-container>
+        </form>
+    </div>
+</div>
+
+<!--<div fxLayout="column" fxFlexFill>
+    <div fxLayoutAlign="center center" fxFlexFill>-->
