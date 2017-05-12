@@ -1,16 +1,32 @@
-<div fxLayout="column" fxFlexFill >
-    <div fxLayoutAlign="center center" fxFlexFill>
-        <form>
-            <md-input-container>
-                <input type="text" mdInput name="username" ngModel #usernameRef='ngModel' required placeholder="Rcer name" />
-                <md-error *ngIf='usernameRef.errors?.required'></md-error>
-            </md-input-container>
-            <md-input-container>
-                <textarea mdInput placeholder="description"></textarea>
-            </md-input-container>
-        </form>
+<div fxLayout="column" fxFlexFill>
+    <div fxFlex="30">
+    </div>
+    <div fxFlex="40">
+        <div fxAlign="row" fxLayoutAlign="center center">
+            <div fxFlex="50">
+                <form>
+                    <div fxLayout="column">
+                        <div>
+                            <md-input-container fxFlexFill>
+                                <input type="text" mdInput name="username" ngModel #usernameRef='ngModel' required placeholder="Name of the driver" />
+                                <md-error *ngIf='usernameRef.errors?.required'></md-error>
+                            </md-input-container>
+                        </div>
+                        <div>
+                            <md-input-container fxFlexFill>
+                                <textarea mdInput placeholder="description"></textarea>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </form>
+                <div fxLayoutAlign="end center">
+                    <button md-button>Save</button>
+                    <button md-button>Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div fxFlex="30">
     </div>
 </div>
-
-<!--<div fxLayout="column" fxFlexFill>
-    <div fxLayoutAlign="center center" fxFlexFill>-->
