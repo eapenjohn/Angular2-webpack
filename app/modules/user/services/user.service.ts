@@ -31,13 +31,16 @@ export default class UserService {
 
     get() {
 
-        return Promise.resolve(this.users)
+        return Observable.of(this.users)
         //return this.users
     }
 
     getById(id) {
-        return this.get().then((data) =>
-            data.find(s => s.id === +id));
+        return this.get().flatMap(user=> {
+            return user;
+        }).filter(user =>{
+               return id === user.id
+        })
     }
 
 
