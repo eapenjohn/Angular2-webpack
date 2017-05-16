@@ -24,12 +24,11 @@ export default class UserDetailsComponent {
   }
 
   ngOnInit() {
-    // alert(this.activatedRoute)
       this.activatedRoute.params.switchMap((params)=>{
-        // alert(params.id)
       return this.userservice.getById(+params.id);
       //  console.log(this.user)
-       }).do(x=> console.log(x)).subscribe((data) => this.user=data)
+       }).do(x=> console.log(x))
+       .subscribe((data) => this.user=data)
   }
 
 }
