@@ -4,24 +4,25 @@
     <div fxFlex="40">
         <div fxAlign="row" fxLayoutAlign="center center">
             <div fxFlex="50">
-                <form #editForm='ngForm' name='editForm'>
+                <form [formGroup] ='editForm' name='editForm'>
                     <div fxLayout="column">
                         <div>
                             <md-input-container fxFlexFill>
-                                <input type="text" mdInput name="username" required ngModel #usernameRef='ngModel' placeholder="Name of the driver" />
-                                <md-error *ngIf='usernameRef.errors?.required'></md-error>
+                                <input type="text" mdInput  formControlName='userName' placeholder="Name of the driver" />
+                                <!--<md-error *ngIf='usernameRef.errors?.re=quired'></md-error>-->
                             </md-input-container>
                         </div>
                         <div>
                             <md-input-container fxFlexFill>
-                                <textarea mdInput name="description" ngModel #descriptionRef='ngModel' placeholder="description"></textarea>
-                                <md-error *ngIf='descriptionRef.errors?.required' ></md-error>
+                                <textarea mdInput   formControlName='description' placeholder="description"></textarea>
+                                {{description}}
+                                <md-error *ngIf='description?.errors?.required' ></md-error>
                             </md-input-container>
                         </div>
                     </div>
                 </form>
                 <div fxLayoutAlign="end center">
-                    <button md-button [disabled]='!editForm.valid' (click)='Save(editForm.value)'>Save</button>
+                    <button md-button (click)='Save(editForm.value)'>Save</button>
                     <button md-button>Cancel</button>
                 </div>
             </div>

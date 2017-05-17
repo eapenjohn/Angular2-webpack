@@ -1,23 +1,25 @@
 import { Component } from '@angular/core'
-
-import UserService  from '../../services'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
+import UserService from '../../services'
 
 @Component({
-    selector: 'edit-user',
-    template: require('./edit.html')
+  selector: 'edit-user',
+  template: require('./edit.html')
 })
 
 export default class EditComponent {
-   
-   constructor( UserService:UserService)
-   {
+  editForm: FormGroup;
 
-   }
-   save(editForm)
-   {
-     console.log(editForm)
-   }
+  constructor(UserService: UserService) {
+    this.editForm = new FormGroup({
+      userName: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required])
+    });
+  }
+  save(editForm) {
+    console.log(editForm)
+  }
 
 }
 
-EditComponent.parameters=[UserService]
+EditComponent.parameters = [UserService]
