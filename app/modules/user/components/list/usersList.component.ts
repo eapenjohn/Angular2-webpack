@@ -13,14 +13,9 @@ export default class UsersListComponent
     users :Observable<[]>;
     constructor(public userService:UserService, public route:ActivatedRoute)
     {
-    //  console.log( userService.get());
     }
 
    ngOnInit(){
-    //   this.users= this.userService.get().switchMap((data)=>{
-    //     this.users=data
-    //  });
-
    this.users=   this.route.params.switchMap(()=>{
         return this.userService.get();
     })
