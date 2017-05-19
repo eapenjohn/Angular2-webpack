@@ -2,7 +2,7 @@ import { Routes } from '@angular/router'
 
 import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesComponent, EditComponent } from './components'
 
-import {LoginGuard} from '../login/guards'
+import { LoginGuard } from '../login/guards'
 
 let routes: Routes = [
     {
@@ -13,18 +13,21 @@ let routes: Routes = [
                 path: '',
                 children: [
                     {
+                path: 'newdddd', component: EditComponent
+            },
+                    {
                         path: ':id',
                         children: [
 
                             {
                                 path: '', component: UserDetailsComponent, children: [
-                                   
+
                                 ]
                             },
- //not working
-                                    { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
+                            //not working
+                            { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
                             // { path: 'edit', component: EditComponent, canActivate: [LoginGuard] }
-                              { path: 'edit', component: EditComponent, canActivate: [] }
+                            { path: 'edit', component: EditComponent, canActivate: [] },
                         ]
                     }
                 ]
@@ -32,6 +35,7 @@ let routes: Routes = [
             {
                 path: '', outlet: 'list', component: UsersListComponent
             },
+            
 
         ]
     }

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
+
+import { User } from '../models'
 @Injectable()
 export default class UserService {
 
-    users = [
+    users: User[] = [
         {
             id: 1,
             name: 'Lewis',
@@ -36,13 +38,33 @@ export default class UserService {
     }
 
     getById(id) {
-        return this.get().flatMap(user=> {
+        return this.get().flatMap(user => {
             return user;
-        }).filter(user =>{
-               return id === user.id
+        }).filter(user => {
+            return id === user.id
         })
     }
 
+    save(user) {
+        let update: false;
+        if (user.id) {
+            update = true;
+        }
+        else {
+            user.id = this.users.length + 1;
+        }
+        return Observable.of(true).delay(1000).do(() => {
 
+            if (update)
+            {
+            var userObj; this.users.find(s=>s.id == user.id)
+             Object.assign(userObj, user)
+            } else {
+                this.users.push(
+                    user
+                )
+            }
+        })
+    }
 }
 
