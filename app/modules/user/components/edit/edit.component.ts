@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router'
 
 import UserService from '../../services'
-import { User,avatars } from '../../models'
+import { User, avatars } from '../../models'
 @Component({
   selector: 'edit-user',
   template: require('./edit.html')
@@ -12,7 +12,8 @@ import { User,avatars } from '../../models'
 export default class EditComponent {
   editForm: FormGroup;
   user: User;
-  avatars=avatars;
+  avatars = avatars;
+  public isPristine = true;;
 
   constructor(private userService: UserService, private route: ActivatedRoute) {
 
@@ -31,11 +32,19 @@ export default class EditComponent {
     })
 
 
-    this.editForm = new FormBuilder().group({
-      userName: new FormControl(this.user.name, [Validators.required]),
-      description: new FormControl(this.user.description, [Validators.required]),
-      avatar :new FormControl(this.user.avatar,[Validators.required])
-    });
+    this.editForm = new FormBuilder()
+      .group({
+        userName: new FormControl(this.user.name, [Validators.required]),
+        description: new FormControl(this.user.description, [Validators.required]),
+        avatar: new FormControl(this.user.avatar, [Validators.required])
+      });
+
+    this.editForm.valueChanges
+      .filter(f => !f.pristine)
+      .do(() => {
+        this.isPristine = false;
+        console.log('not pristine')
+      }).subscribe();
   }
   Save() {
 

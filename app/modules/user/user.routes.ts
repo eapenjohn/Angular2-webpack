@@ -3,6 +3,7 @@ import { Routes } from '@angular/router'
 import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesComponent, EditComponent } from './components'
 
 import { LoginGuard } from '../login/guards'
+import { EditFormDeactive } from './guards'
 
 let routes: Routes = [
     {
@@ -13,16 +14,14 @@ let routes: Routes = [
                 path: '',
                 children: [
                     {
-                path: 'newdddd', component: EditComponent
-            },
+                        path: 'newdddd', component: EditComponent, canDeactivate: [ EditFormDeactive ]
+                    },
                     {
                         path: ':id',
                         children: [
 
                             {
-                                path: '', component: UserDetailsComponent, children: [
-
-                                ]
+                                path: '', component: UserDetailsComponent, children: []
                             },
                             //not working
                             { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
@@ -35,7 +34,7 @@ let routes: Routes = [
             {
                 path: '', outlet: 'list', component: UsersListComponent
             },
-            
+
 
         ]
     }
