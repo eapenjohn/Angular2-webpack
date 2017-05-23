@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 
-import UserService from '../../services'
+import {UserService} from '../../services'
 
 @Component({
     selector:'users-list',

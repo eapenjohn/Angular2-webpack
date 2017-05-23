@@ -1,3 +1,3 @@
 import UserService from './user.service'
-
-export default UserService
+ import UserResolver  from './user.resolve'
+export { UserService ,UserResolver }

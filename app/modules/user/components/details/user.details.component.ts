@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable'
  import { Component } from '@angular/core'
 
 import './user.details.scss'
-import UserService from '../../services'
+import {UserService} from '../../services'
 
 
 @Component({
