@@ -19,6 +19,7 @@ let routes: Routes = [
                     },
                     {
                         path: ':id',
+                        resolve : { user :UserResolver},
                         children: [
 
                             {
@@ -27,7 +28,7 @@ let routes: Routes = [
                             //not working
                             { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
                             // { path: 'edit', component: EditComponent, canActivate: [LoginGuard] }
-                            { path: 'edit', component: EditComponent, canActivate: [], resolve: UserResolver },
+                            { path: 'edit', component: EditComponent, canActivate: []},
                         ]
                     }
                 ]

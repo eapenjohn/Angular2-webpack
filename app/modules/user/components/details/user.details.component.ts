@@ -24,10 +24,9 @@ export default class UserDetailsComponent {
   }
 
   ngOnInit() {
-      this.activatedRoute.params.switchMap((params)=>{
-      return this.userservice.getById(+params.id);
-       }).do(x=> console.log(x))
-       .subscribe((data) => this.user=data)
+    this.activatedRoute.data.subscribe((data)=>{
+      this.user=data.user;
+    })
   }
 
 }

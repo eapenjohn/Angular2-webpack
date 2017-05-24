@@ -19,22 +19,10 @@ export default class EditComponent {
 
   }
   ngOnInit() {
-    //  console.log(this.route.data)
-    //   this.route.params.subscribe((params) => {
-    // if (params.id) {
-    //   this.userService.getById(+params.id).subscribe((user) => {
-    //     this.user = user;
-    //   })
-    // }
-    // else {
-    //   this.user = new User();
-    // }
 
-    this.route.data.subscribe(user => {
-      this.user = user;
-    })
-    // })
-
+    this.route.data.subscribe(data => {
+      this.user = data.user;
+    });
 
     this.editForm = new FormBuilder()
       .group({
@@ -47,11 +35,10 @@ export default class EditComponent {
       .filter(f => !f.pristine)
       .do(() => {
         this.isPristine = false;
-        console.log('not pristine')
       }).subscribe();
   }
-  Save() {
 
+  Save() {
     this.user.avatar = this.editForm.controls.avatar.value;
     this.user.name = this.editForm.controls.userName.value;;
     this.user.description = this.editForm.controls.description.value;
