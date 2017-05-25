@@ -29,7 +29,7 @@ let routes: Routes = [
                             //not working
                             { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
                             // { path: 'edit', component: EditComponent, canActivate: [LoginGuard] }
-                            { path: 'edit', component: EditComponent, canActivate: [], canDeactivate :[EditFormDeactive] },
+                            { path: 'edit', component: EditComponent, canActivate: [LoginGuard], canDeactivate :[EditFormDeactive] },
                         ]
                     }
                 ]

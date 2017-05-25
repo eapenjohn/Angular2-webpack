@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { Router } from '@angular/router'
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router'
 
 import { LoginService } from '../../services'
 
@@ -12,20 +12,25 @@ import { LoginService } from '../../services'
 export default class LoginComponent {
     userId;
     password;
-    constructor(private loginService: LoginService, private route: Router) {
-     this.userId='';
+    constructor(private loginService: LoginService, private route: Router, private activatedRoute : ActivatedRoute) {
+        this.userId = '';
     }
 
 
     login(formRef) {
-      this.loginService.login().subscribe(()=>{
-      console.log(this.loginService.redirectUrl)
-          
-         this.route.navigate([this.loginService.redirectUrl])
-      })
+        this.loginService.login().subscribe(() => {
+            console.log(this.loginService.redirectUrl)
+            let navigationExtras: NavigationExtras = {
+                preserveQueryParams: true,
+                preserveFragment: true,
+                relativeTo: this.activatedRoute.root
+            };
+
+            this.route.navigate([this.loginService.redirectUrl], navigationExtras)
+        })
     }
 
 
 }
 
-LoginComponent.parameters = [LoginService,Router]
+LoginComponent.parameters = [LoginService, Router,ActivatedRoute]

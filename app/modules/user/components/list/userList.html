@@ -4,6 +4,6 @@
 <div fxLayout="column" fxFlexOffset="10">
      <div fxFlex *ngFor="let user of users | async">
          <md-icon svgIcon="{{user.avatar}}"></md-icon>
-        <h1> <a [routerLink]="['./', user.id, {selected: user.id}]"> {{user.name}} </a></h1>
+        <h1> <a [routerLink]="['./', user.id]"> {{user.name}} </a></h1>
     </div>
 </div>

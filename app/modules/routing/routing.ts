@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router'
 
-import { UsersListComponent, UserDetails } from '../user/components'
 import { RootComponent, HomeComponent, AdvertiseComponent, PageNotFoundComponent } from '../home/components'
 
 
