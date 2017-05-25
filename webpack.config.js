@@ -18,7 +18,7 @@ module.exports = {
         //  alias: alias
 
     },
-   // devtool: 'source-map',
+ devtool: 'eval-source-map',
 
     module: {
         rules: [{

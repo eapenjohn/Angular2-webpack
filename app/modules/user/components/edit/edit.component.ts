@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 import { UserService } from '../../services'
 import { User, avatars } from '../../models'
@@ -15,12 +15,12 @@ export default class EditComponent {
   avatars = avatars;
   public isPristine = true;;
 
-  constructor(private userService: UserService, private route: ActivatedRoute) {
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private route: Router) {
 
   }
   ngOnInit() {
 
-    this.route.data.subscribe(data => {
+    this.activatedRoute.data.subscribe(data => {
       this.user = data.user;
     });
 
@@ -34,8 +34,12 @@ export default class EditComponent {
     this.editForm.valueChanges
       .filter(f => !f.pristine)
       .do(() => {
-        this.isPristine = false;
+         this.isPristine = false;
       }).subscribe();
+  }
+
+  canDeactivate() {
+    return this.isPristine;
   }
 
   Save() {
@@ -44,9 +48,12 @@ export default class EditComponent {
     this.user.description = this.editForm.controls.description.value;
     return this.userService
       .save(this.user)
-      .subscribe();
+      .do(() => this.isPristine = true)
+      .subscribe((user) => {
+        this.route.navigate(['./users/' + user.id])
+      });
   }
 
 }
 
-EditComponent.parameters = [UserService, ActivatedRoute]
+EditComponent.parameters = [UserService, ActivatedRoute, Router]

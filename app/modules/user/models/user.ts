@@ -3,5 +3,4 @@ export default class User {
     name: string;
     description: string;
     avatar: string
-
 }

@@ -4,7 +4,7 @@ import { UsersListComponent, UserDetailsComponent, RootUserComponent, UserRacesC
 
 import { LoginGuard } from '../login/guards'
 import { EditFormDeactive } from './guards'
-import {UserService ,UserResolver} from './services'
+import { UserService, UserResolver } from './services'
 
 let routes: Routes = [
     {
@@ -13,13 +13,14 @@ let routes: Routes = [
         children: [
             {
                 path: '',
+              
                 children: [
                     {
-                        path: 'newdddd', component: EditComponent, canDeactivate: [ EditFormDeactive ]
+                        path: 'new', component: EditComponent, canDeactivate: [EditFormDeactive],  resolve: { user: UserResolver },
                     },
                     {
                         path: ':id',
-                        resolve : { user :UserResolver},
+                        resolve: { user: UserResolver },
                         children: [
 
                             {
@@ -28,7 +29,7 @@ let routes: Routes = [
                             //not working
                             { path: 'racedetails', component: UserRacesComponent, outlet: 'races' },
                             // { path: 'edit', component: EditComponent, canActivate: [LoginGuard] }
-                            { path: 'edit', component: EditComponent, canActivate: []},
+                            { path: 'edit', component: EditComponent, canActivate: [], canDeactivate :[EditFormDeactive] },
                         ]
                     }
                 ]

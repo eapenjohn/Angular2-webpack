@@ -46,25 +46,18 @@ export default class UserService {
     }
 
     save(user) {
-        let update: false;
-        if (user.id) {
-            update = true;
-        }
-        else {
-            user.id = this.users.length + 1;
-        }
         return Observable.of(true).delay(1000).do(() => {
-
-            if (update)
-            {
-            var userObj; this.users.find(s=>s.id == user.id)
-             Object.assign(userObj, user)
-            } else {
+            var userObj = this.users.find(s => s.id == user.id)
+            if (userObj) {
+                Object.assign(userObj, user)
+            }
+            else {
+                 user.id = this.users.length + 1;
                 this.users.push(
                     user
                 )
             }
-        })
+        }).map(()=> user)
     }
 }
 
