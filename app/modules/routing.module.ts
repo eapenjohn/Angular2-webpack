@@ -6,13 +6,14 @@ import {
     PathLocationStrategy
 } from '@angular/common'
 
-import UserModule  from '../user'
-import {HomeModule}  from '../home'
+// import UserModule  from '../user'
+import {HomeModule}  from './home'
 import routes from './routing'
-import  { HomeComponent} from '../home/components'
+import  { HomeComponent} from './home/components'
+import UserModule from './user/user.module'
 
 @NgModule({
- imports:[HomeModule,UserModule, RouterModule.forRoot(routes)],
+ imports:[HomeModule, UserModule, RouterModule.forRoot(routes)],
  bootstrap:[HomeComponent],
   providers: [{
         provide: LocationStrategy,

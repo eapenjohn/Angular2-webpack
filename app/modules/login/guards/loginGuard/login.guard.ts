@@ -30,4 +30,4 @@ export default class LoginGuard implements CanActivate {
     }
 }
 
-LoginGuard.parameters = [LoginService, Router];
+LoginGuard['parameters'] = [LoginService, Router];

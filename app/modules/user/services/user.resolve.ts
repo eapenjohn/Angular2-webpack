@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core'
 import { Resolve, Router } from '@angular/router'
-import { ActivatedRouteSnapshot, RouterState } from '@angular/router'
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router'
 import { Observable } from 'rxjs'
 
 
@@ -14,7 +14,7 @@ export default class UserResolver implements Resolve<User>
     constructor(private userService: UserService, private route: Router) {
 
     }
-    resolve(activateRoute: ActivatedRouteSnapshot, state: RouterState) {
+    resolve(activateRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
         let id = activateRoute.params.id;
         if (!id) return Observable.of(new User())
         return this.userService.getById(+id).map((user) => {

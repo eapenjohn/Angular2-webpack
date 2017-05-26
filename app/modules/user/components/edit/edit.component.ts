@@ -56,4 +56,4 @@ export default class EditComponent {
 
 }
 
-EditComponent.parameters = [UserService, ActivatedRoute, Router]
+EditComponent['parameters'] = [UserService, ActivatedRoute, Router]

@@ -33,4 +33,4 @@ export default class LoginComponent {
 
 }
 
-LoginComponent.parameters = [LoginService, Router,ActivatedRoute]
+LoginComponent['parameters'] = [LoginService, Router,ActivatedRoute]

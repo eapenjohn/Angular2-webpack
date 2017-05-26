@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router'
 
-import { RootComponent, HomeComponent, AdvertiseComponent, PageNotFoundComponent } from '../home/components'
+import { RootComponent, HomeComponent, AdvertiseComponent, PageNotFoundComponent } from './home/components'
 
 
 let routes: Routes = [{
@@ -8,16 +8,10 @@ let routes: Routes = [{
     component: RootComponent,
     //   pathMatch:'full',
     //     redirectTo:'/users'
-    children: [
-        {
-            path: 'hello',
-            component: 'angular'
-        }
-    ]
 },
 {
     path: 'users',
-    loadChildren: '../user/user.module#UserModule'
+    loadChildren: '/user/user.module#UserModule'
 }, 
 {
     path: '**',
