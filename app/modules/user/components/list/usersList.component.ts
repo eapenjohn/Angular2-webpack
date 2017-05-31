@@ -10,7 +10,7 @@ import {UserService} from '../../services'
 
 export default class UsersListComponent
 {
-    users :Observable<[]>;
+    users :Observable<[any]>;
     constructor(public userService:UserService, public route:ActivatedRoute)
     {
     }

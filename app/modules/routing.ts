@@ -11,7 +11,7 @@ let routes: Routes = [{
 },
 {
     path: 'users',
-    loadChildren: '/user/user.module#UserModule'
+    loadChildren: './user/user.module#UserModule'
 }, 
 {
     path: '**',
